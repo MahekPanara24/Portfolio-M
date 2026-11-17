@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({
               </a>
 
               <a
-                href="Mahek_Panara_Security_Assessment_Report.pdf"
+                href="./Mahek_Panara_Security_Assessment_Report.pdf"
                 download="Mahek_Panara_Security_Assessment_Report.pdf"
                 target="_blank"
                 rel="noreferrer"

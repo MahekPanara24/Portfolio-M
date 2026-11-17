@@ -89,7 +89,7 @@ export const executeTerminalCommand = (
             <p>Target: OWASP Juice Shop & E-Commerce REST API Assessment (Confidential / Sanitized)</p>
             <div className="pt-1">
               <a
-                href="Mahek_Panara_Security_Assessment_Report.pdf"
+                href="./Mahek_Panara_Security_Assessment_Report.pdf"
                 download="Mahek_Panara_Security_Assessment_Report.pdf"
                 target="_blank"
                 rel="noreferrer"

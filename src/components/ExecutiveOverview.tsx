@@ -98,7 +98,7 @@ export const ExecutiveOverview: React.FC = () => {
 
             {/* Direct Download for Sample Security Audit Report */}
             <a
-              href="Mahek_Panara_Security_Assessment_Report.pdf"
+              href="./Mahek_Panara_Security_Assessment_Report.pdf"
               download="Mahek_Panara_Security_Assessment_Report.pdf"
               target="_blank"
               rel="noreferrer"

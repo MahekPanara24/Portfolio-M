@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Sample Audit Report Button */}
             <a
-              href="Mahek_Panara_Security_Assessment_Report.pdf"
+              href="./Mahek_Panara_Security_Assessment_Report.pdf"
               download="Mahek_Panara_Security_Assessment_Report.pdf"
               target="_blank"
               rel="noreferrer"
@@ -213,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               <a
-                href="Mahek_Panara_Security_Assessment_Report.pdf"
+                href="./Mahek_Panara_Security_Assessment_Report.pdf"
                 download="Mahek_Panara_Security_Assessment_Report.pdf"
                 target="_blank"
                 rel="noreferrer"

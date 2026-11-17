@@ -34,14 +34,14 @@ export const Showcase: React.FC = () => {
             Every system is audited and engineered for resilience. Select any architecture below to inspect defensive workflows, threat mitigation mechanisms, and verified technical outcomes.
           </p>
 
-          {/* Responsive Scrollable Pill Tabs (Never squished or vertically stacked) */}
-          <div className="w-full max-w-2xl mx-auto mt-8 overflow-x-auto no-scrollbar pb-1">
-            <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-[#10141e] border border-slate-800 justify-start sm:justify-center min-w-max mx-auto">
+          {/* Full-width Responsive Grid Tabs (No scrollbar, uses whole row space) */}
+          <div className="w-full max-w-5xl mx-auto mt-8 p-1.5 sm:p-2 rounded-2xl bg-[#10141e] border border-slate-800 shadow-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
               {tabs.map((tab, idx) => (
                 <button
                   key={tab.code}
                   onClick={() => setSelectedIdx(idx)}
-                  className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-all shrink-0 ${
+                  className={`flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-all w-full text-center ${
                     selectedIdx === idx
                       ? 'bg-blue-600 text-white shadow-md'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/60'

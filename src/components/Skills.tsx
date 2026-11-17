@@ -44,16 +44,16 @@ export const Skills: React.FC = () => {
           </p>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        {/* Full-width Responsive Grid Tab Navigation */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-4xl mx-auto mb-12">
           {skillCategories.map((category, idx) => (
             <button
               key={idx}
               onClick={() => setActiveTab(idx)}
-              className={`flex items-center gap-2.5 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-200 ${
+              className={`flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl font-medium text-sm transition-all duration-200 w-full text-center ${
                 activeTab === idx
                   ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
-                  : 'bg-[#0d131f] border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
+                  : 'bg-[#0d131f] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
               }`}
             >
               {getCategoryIcon(category.icon)}

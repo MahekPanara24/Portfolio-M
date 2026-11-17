@@ -1,30 +1,33 @@
-# Mahek Panara — Cybersecurity Analyst Aspirant & Full-Stack Developer Portfolio
+# Mahek Panara — Cybersecurity Analyst Aspirant Portfolio
 
-A modern, high-performance portfolio website built with **React 19**, **Three.js WebGL (3D Core)**, **Tailwind CSS v4**, and **Framer Motion**, architected specifically for static hosting on **GitHub Pages**.
+A modern, editorial portfolio website built with **React 19**, **Tailwind CSS v4**, and **Framer Motion**, architected specifically for static deployment on **GitHub Pages**.
 
-🔗 **Live URL:** [https://MahekPanara24.github.io/Portfolio](https://MahekPanara24.github.io/Portfolio)
+🔗 **Live Portfolio Website:** [https://krishjadav30.github.io/Portfolio-M/](https://krishjadav30.github.io/Portfolio-M/)
 
 ---
 
 ## 🛡️ Profile Overview
 - **Name:** Mahek Panara
-- **Title:** B.Sc. IT Graduate | Cybersecurity Analyst Aspirant & Full-Stack Web Developer (MERN)
-- **Location:** Ahmedabad, Gujarat, India *(Open to Relocation across Ahmedabad, Vadodara, Gandhinagar, Surat)*
-- **Contact:** [mahekpanara24@gmail.com](mailto:mahekpanara24@gmail.com) • +91 6352760654
+- **Role:** Cybersecurity Analyst Aspirant | Network Defense & Threat Mitigation
+- **Education:** B.Sc. Information Technology — LJ University (2023 – 2026)
+- **Specialized Training:** Cybersecurity Professional Course — Demmisto Technologies
+- **Industry Experience:** MERN Stack Developer Intern — True Twist
+- **Location:** Ahmedabad, Gujarat, India
+- **Email:** [mahekpanara24@gmail.com](mailto:mahekpanara24@gmail.com)
+- **Phone:** +91 6352760654
 - **LinkedIn:** [linkedin.com/in/mahek-panara-159829327](https://linkedin.com/in/mahek-panara-159829327)
 - **GitHub:** [github.com/MahekPanara24](https://github.com/MahekPanara24)
 
 ---
 
-## ⚡ Tech Stack & Features
-- **Interactive 3D WebGL Shield Core:** Built with `@react-three/fiber` and `@react-three/drei`.
-- **Interactive SOC Defense Terminal:** Interactive zsh terminal supporting commands (`help`, `whoami`, `skills`, `projects`, `scan`, `contact`, `clear`).
-- **Live Web Application Security Auditor:** Interactive tool demonstrating OWASP Top 10 hardening, input sanitization, and header validation.
-- **Categorized Skills Matrix:** Visual animated progress bars for Cybersecurity, MERN stack, and tools.
-- **Curated Projects Showcase:** Filterable gallery featuring detailed security architectures, metrics, and GitHub links.
-- **Verified Timeline:** Detailed experience records for Demmisto Technologies (Cybersecurity Professional Course), True Twist (MERN Stack Intern), and LJ University (B.Sc. IT).
-- **Embedded Resume Viewer & PDF Export:** One-click preview and print/download modal.
-- **Instant Contact Card:** Copy-to-clipboard for email/phone with visual toasts and confetti triggers.
+## ⚡ Key Highlights & Architecture
+- **Editorial Newspaper Overview:** Systems architecture, threat defense, and verified credentials with interactive Polaroid badge.
+- **2D Concentric Orbiting Avatar:** Multi-ring CSS/Framer-Motion animation with live status beacon.
+- **Continuous Technology Marquee:** Smooth infinite ticker highlighting core security capabilities and networking protocols.
+- **Interactive Studio Whiteboard:** Interactive HTML5 canvas with drawing tools, endorsement stamps (`APPROVED`, `LGTM`, `SHIPPED`, `HIRED`), and souvenir export.
+- **Tabbed Architectural Showcase:** In-depth 3-tier security breakdowns (Client Defense, API Logic, Database Hardening) across production projects.
+- **Interactive Analyst Shell:** Command-line terminal supporting `help`, `whoami`, `skills`, `projects`, `contact`, and `clear`.
+- **Integrated PDF Resume:** Direct download of authentic 2-page PDF and isolated print styles.
 
 ---
 
@@ -34,22 +37,19 @@ A modern, high-performance portfolio website built with **React 19**, **Three.js
 # Install dependencies
 npm install
 
-# Start local development server
+# Start local dev server
 npm run dev
 
-# Build for production
+# Production build
 npm run build
 
-# Preview production build locally
+# Preview build locally
 npm run preview
 ```
 
 ---
 
 ## 🌐 GitHub Pages Deployment
-This repository includes an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml`. Every commit pushed to `main` automatically triggers a build and publishes to GitHub Pages.
+This repository is configured with an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml`. Every push to `main` builds and publishes the live site automatically to:
+**https://krishjadav30.github.io/Portfolio-M/**
 
-To manually deploy via CLI:
-```bash
-npm run deploy
-```

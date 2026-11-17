@@ -2,7 +2,7 @@
 
 A modern, editorial portfolio website built with **React 19**, **Tailwind CSS v4**, and **Framer Motion**, architected specifically for static deployment on **GitHub Pages**.
 
-🔗 **Live Portfolio Website:** [https://krishjadav30.github.io/Portfolio-M/](https://krishjadav30.github.io/Portfolio-M/)
+🔗 **Live Portfolio Website:** [https://mahekpanara24.github.io/Portfolio-M/](https://mahekpanara24.github.io/Portfolio-M/)
 
 ---
 
@@ -54,4 +54,4 @@ npm run preview
 
 This repository is configured with an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml`. Every push to `main` builds and publishes the live site automatically to:
 
-[https://krishjadav30.github.io/Portfolio-M/](https://krishjadav30.github.io/Portfolio-M/)
+[https://mahekpanara24.github.io/Portfolio-M/](https://mahekpanara24.github.io/Portfolio-M/)

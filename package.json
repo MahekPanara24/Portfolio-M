@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://KrishJadav30.github.io/Portfolio-M",
+  "homepage": "https://MahekPanara24.github.io/Portfolio-M",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

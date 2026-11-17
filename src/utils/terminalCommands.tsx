@@ -108,8 +108,8 @@ export const executeTerminalCommand = (
           <div className="space-y-1 text-xs text-slate-300 font-mono">
             <p className="text-blue-400 font-bold">RFC 9116 Standard Security Disclosure Policy:</p>
             <p className="text-slate-400">Contact: mailto:mahekpanara24@gmail.com</p>
-            <p className="text-slate-400">Canonical: https://krishjadav30.github.io/Portfolio-M/.well-known/security.txt</p>
-            <p className="text-slate-400">Policy: https://krishjadav30.github.io/Portfolio-M/#contact</p>
+            <p className="text-slate-400">Canonical: https://mahekpanara24.github.io/Portfolio-M/.well-known/security.txt</p>
+            <p className="text-slate-400">Policy: https://mahekpanara24.github.io/Portfolio-M/#contact</p>
             <p className="text-slate-400">Expires: 2027-12-31T23:59:59.000Z</p>
           </div>
         ),

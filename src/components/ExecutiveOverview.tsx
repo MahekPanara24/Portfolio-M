@@ -187,9 +187,9 @@ export const ExecutiveOverview: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {securityBadges.map((badge, idx) => (
+            {securityBadges.map((badge) => (
               <div
-                key={idx}
+                key={badge.platform}
                 className="p-5 rounded-2xl bg-[#0b0e15] border border-slate-800 hover:border-blue-500/50 transition-all group text-left"
               >
                 <div className="flex items-center justify-between mb-3">

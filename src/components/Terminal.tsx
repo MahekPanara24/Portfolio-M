@@ -8,6 +8,7 @@ interface TerminalProps {
 }
 
 interface CommandHistory {
+  id: string;
   command: string;
   output: React.ReactNode;
 }
@@ -16,6 +17,7 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<CommandHistory[]>([
     {
+      id: 'init-welcome',
       command: 'welcome',
       output: (
         <div className="space-y-1.5 text-xs text-slate-300">
@@ -159,8 +161,8 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'skills':
         response = (
           <div className="space-y-2 text-xs">
-            {skillCategories.map((cat, idx) => (
-              <div key={idx} className="border-l-2 border-blue-500 pl-2">
+            {skillCategories.map((cat) => (
+              <div key={cat.title} className="border-l-2 border-blue-500 pl-2">
                 <p className="text-blue-400 font-bold">{cat.title}:</p>
                 <p className="text-slate-300">{cat.skills.map(s => s.name).join(' • ')}</p>
               </div>
@@ -172,8 +174,8 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'projects':
         response = (
           <div className="space-y-2 text-xs">
-            {projects.map((p, idx) => (
-              <div key={idx} className="p-2 rounded bg-slate-900 border border-slate-800">
+            {projects.map((p) => (
+              <div key={p.id} className="p-2 rounded bg-slate-900 border border-slate-800">
                 <p className="text-blue-400 font-bold">{p.title}</p>
                 <p className="text-slate-300">{p.summary}</p>
                 <p className="text-[10px] text-slate-400 mt-1">Tags: {p.tags.join(', ')}</p>
@@ -208,7 +210,10 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
         break;
     }
 
-    setHistory((prev) => [...prev, { command: cmd, output: response }]);
+    setHistory((prev) => [
+      ...prev,
+      { id: `${cmd}-${Date.now()}-${prev.length}`, command: cmd, output: response },
+    ]);
   };
 
   const onSubmit = (e: React.FormEvent) => {
@@ -276,8 +281,8 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
 
         {/* Output Log */}
         <div className="flex-1 p-5 overflow-y-auto space-y-3 font-mono">
-          {history.map((item, idx) => (
-            <div key={idx} className="space-y-1">
+          {history.map((item) => (
+            <div key={item.id} className="space-y-1">
               <div className="flex items-center gap-2 text-xs">
                 <span className="text-blue-400 font-semibold">mahek@profile:~$</span>
                 <span className="text-white font-semibold">{item.command}</span>

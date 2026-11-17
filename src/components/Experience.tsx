@@ -29,7 +29,7 @@ export const Experience: React.FC = () => {
 
             return (
               <motion.div
-                key={idx}
+                key={`${exp.organization}-${exp.role}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -95,8 +95,8 @@ export const Experience: React.FC = () => {
 
                   {/* Bullet Points */}
                   <ul className="space-y-3 mb-6">
-                    {exp.points.map((pt, pIdx) => (
-                      <li key={pIdx} className="text-sm sm:text-base text-slate-200 leading-relaxed flex items-start gap-3">
+                    {exp.points.map((pt) => (
+                      <li key={pt} className="text-sm sm:text-base text-slate-200 leading-relaxed flex items-start gap-3">
                         <span className="p-0.5 rounded-full bg-blue-500/10 text-blue-400 shrink-0 mt-1">
                           <Check className="w-4 h-4" />
                         </span>
@@ -111,9 +111,9 @@ export const Experience: React.FC = () => {
                       Key Competencies:
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {exp.skillsGained.map((skill, sIdx) => (
+                      {exp.skillsGained.map((skill) => (
                         <span
-                          key={sIdx}
+                          key={skill}
                           className="text-xs sm:text-sm font-medium px-3.5 py-1.5 rounded-lg bg-[#141a26] text-slate-200 border border-slate-800 hover:border-blue-500/40 transition-colors"
                         >
                           {skill}

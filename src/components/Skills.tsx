@@ -50,7 +50,7 @@ export const Skills: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-5xl mx-auto mb-12">
           {skillCategories.map((category, idx) => (
             <button
-              key={idx}
+              key={category.title}
               onClick={() => setActiveTab(idx)}
               className={`flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 w-full text-center ${
                 activeTab === idx
@@ -74,7 +74,7 @@ export const Skills: React.FC = () => {
         >
           {skillCategories[activeTab].skills.map((skill, idx) => (
             <div
-              key={idx}
+              key={skill.name}
               className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-all shadow-md group"
             >
               <div className="flex items-center justify-between mb-2">
@@ -101,9 +101,9 @@ export const Skills: React.FC = () => {
               </p>
 
               <div className="flex flex-wrap gap-2">
-                {skill.tags.map((tag, tIdx) => (
+                {skill.tags.map((tag) => (
                   <span
-                    key={tIdx}
+                    key={tag}
                     className="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-200 border border-slate-800"
                   >
                     {tag}
@@ -120,9 +120,9 @@ export const Skills: React.FC = () => {
             // Core Analytical Competencies
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-left">
-            {coreCompetencies.map((comp, idx) => (
+            {coreCompetencies.map((comp) => (
               <div
-                key={idx}
+                key={comp.title}
                 className="p-4 rounded-xl bg-[#0d131f] border border-slate-800/80 hover:border-slate-700 transition-all"
               >
                 <div className="flex items-center gap-2 text-blue-400 text-xs sm:text-sm font-bold font-mono mb-2">
@@ -152,9 +152,9 @@ export const Skills: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {securityCertifications.map((cert, idx) => (
+            {securityCertifications.map((cert) => (
               <div
-                key={idx}
+                key={cert.name}
                 className="p-5 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between"
               >
                 <div>

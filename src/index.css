@@ -22,7 +22,7 @@
     font-weight: 700;
   }
 
-  /* Custom minimalist scrollbar */
+  /* Minimalist scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -38,7 +38,7 @@
   }
 }
 
-/* Crisp solid pattern (no gradient) */
+/* Crisp solid pattern */
 .solid-grid {
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
@@ -46,20 +46,53 @@
   background-size: 32px 32px;
 }
 
-/* 2D Floating Animation */
-@keyframes float2D {
-  0%, 100% {
-    transform: translateY(0px);
+/* Print Isolation: Print ONLY the resume document, NOT the background website */
+@media print {
+  @page {
+    margin: 12mm 15mm;
+    size: A4 portrait;
   }
-  50% {
-    transform: translateY(-8px);
+
+  /* Hide entire website and modal backdrop */
+  nav, main, footer, .no-print, [role="dialog"] > div:first-child {
+    display: none !important;
   }
-}
 
-.animate-float-slow {
-  animation: float2D 4s ease-in-out infinite;
-}
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-.animate-float-delayed {
-  animation: float2D 5s ease-in-out 1.5s infinite;
+  #modal-backdrop {
+    background: transparent !important;
+    position: static !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  #modal-container {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  #printable-resume {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    page-break-after: auto;
+  }
+
+  #printable-resume * {
+    color: #000000 !important;
+  }
 }

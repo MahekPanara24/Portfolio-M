@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Printer } from 'lucide-react';
+import { X, Printer, Download, ExternalLink } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -14,70 +14,111 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="bg-[#0d131f] border border-blue-500/40 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
-        
-        {/* Modal Header */}
-        <div className="px-6 py-4 bg-[#0a0e17] border-b border-slate-800 flex items-center justify-between">
+    <div
+      id="modal-backdrop"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+    >
+      <div
+        id="modal-container"
+        className="bg-[#0d131f] border border-blue-500/40 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden"
+      >
+        {/* Modal Header Bar (Hidden during Print) */}
+        <div className="no-print px-5 py-3.5 bg-[#0a0e17] border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-            <h3 className="text-sm font-mono text-slate-200 font-semibold">
+            <h3 className="text-sm font-semibold text-slate-200">
               Mahek_Panara_Cybersecurity_Resume.pdf
             </h3>
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Direct Download of the 2-page Original PDF */}
+            <a
+              href="./Mahek_Panara_Cybersecurity_Resume.pdf"
+              download="Mahek_Panara_Cybersecurity_Resume.pdf"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-colors shadow-sm"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+
+            {/* Open Original PDF in New Tab */}
+            <a
+              href="./Mahek_Panara_Cybersecurity_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-colors"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
+              <span>Open PDF</span>
+            </a>
+
+            {/* Print Button */}
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-colors"
+              title="Print resume document"
             >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save as PDF</span>
+              <Printer className="w-3.5 h-3.5 text-blue-400" />
+              <span>Print</span>
             </button>
+
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ml-1"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Modal Printable Body */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-10 bg-white text-slate-900 text-left font-sans print:p-0">
-          
+        {/* Printable Resume Content (Only this prints) */}
+        <div
+          id="printable-resume"
+          className="flex-1 overflow-y-auto p-6 sm:p-10 bg-white text-slate-900 text-left font-sans"
+        >
           {/* Header */}
-          <div className="border-b-2 border-slate-800 pb-4 mb-6">
+          <div className="border-b-2 border-slate-900 pb-4 mb-5">
             <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 uppercase">
               MAHEK PANARA
             </h1>
-            <p className="text-sm font-bold text-blue-900 mt-1">
+            <p className="text-sm font-bold text-blue-800 mt-1">
               B.Sc. IT Graduate | Cybersecurity Analyst Aspirant & Full-Stack Web Developer (MERN)
             </p>
-            <div className="text-xs text-slate-600 mt-2 flex flex-wrap gap-x-3 gap-y-1">
+            <div className="text-xs text-slate-700 mt-2 flex flex-wrap gap-x-3 gap-y-1 font-medium">
               <span>Ahmedabad, Gujarat, India</span>
               <span>•</span>
               <span>+91 6352760654</span>
               <span>•</span>
-              <a href="mailto:mahekpanara24@gmail.com" className="text-blue-700 hover:underline">mahekpanara24@gmail.com</a>
+              <a href="mailto:mahekpanara24@gmail.com" className="text-blue-700 hover:underline">
+                mahekpanara24@gmail.com
+              </a>
               <span>•</span>
-              <a href="https://linkedin.com/in/mahek-panara-159829327" target="_blank" rel="noreferrer" className="text-blue-700 hover:underline">linkedin.com/in/mahek-panara-159829327</a>
+              <a
+                href="https://linkedin.com/in/mahek-panara-159829327"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-700 hover:underline"
+              >
+                linkedin.com/in/mahek-panara-159829327
+              </a>
             </div>
           </div>
 
           {/* Professional Summary */}
-          <div className="mb-6">
-            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-800 uppercase border-b border-slate-300 pb-1 mb-2">
+          <div className="mb-5">
+            <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2 font-mono">
               PROFESSIONAL SUMMARY
             </h2>
             <p className="text-xs text-slate-700 leading-relaxed text-justify">
-              Detail-oriented B.Sc. IT graduate combining hands-on full-stack web development experience (MERN Stack) with specialized practical training in Cybersecurity. Experienced in building, debugging, and securing modern web applications using MongoDB, Express.js, React.js, and Node.js, alongside structured coursework in network defense, vulnerability assessment, and web application security. Seeking an entry-level Cybersecurity Analyst, SOC Analyst, or Application Security role where full-stack architecture knowledge strengthens threat detection and remediation. Available immediately and ready to relocate across Ahmedabad, Vadodara, Gandhinagar, and Surat.
+              Detail-oriented B.Sc. IT graduate combining hands-on full-stack web development experience (MERN Stack) with specialized practical training in Cybersecurity. Experienced in building, debugging, and securing modern web applications using MongoDB, Express.js, React.js, and Node.js, alongside structured coursework in network defense, vulnerability assessment, and web application security. Seeking an entry-level Cybersecurity Analyst, SOC Analyst, or Application Security role where full-stack architecture knowledge strengthens threat detection and remediation.
             </p>
           </div>
 
           {/* Technical Skills */}
-          <div className="mb-6">
-            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-800 uppercase border-b border-slate-300 pb-1 mb-2">
+          <div className="mb-5">
+            <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2 font-mono">
               TECHNICAL SKILLS
             </h2>
             <div className="space-y-1.5 text-xs">
@@ -101,18 +142,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Internship & Specialized Training */}
-          <div className="mb-6">
-            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-800 uppercase border-b border-slate-300 pb-1 mb-2">
+          <div className="mb-5">
+            <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2 font-mono">
               INTERNSHIP & SPECIALIZED TRAINING
             </h2>
 
             {/* Demmisto */}
-            <div className="mb-4">
+            <div className="mb-3.5">
               <div className="flex justify-between items-baseline">
                 <span className="font-bold text-xs text-slate-900">Cybersecurity Professional Course (Ongoing)</span>
                 <span className="text-xs font-semibold text-slate-600">August 2026 – Present</span>
               </div>
-              <div className="text-xs font-medium text-blue-900 mb-1">Demmisto Technologies</div>
+              <div className="text-xs font-semibold text-blue-800 mb-1">Demmisto Technologies</div>
               <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-slate-700">
                 <li>Developing hands-on expertise in network defense, web application vulnerability scanning, and comprehensive security assessments across modern environments.</li>
                 <li>Applying core security protocols, threat mitigation strategies, and data protection principles to identify, document, and remediate system vulnerabilities.</li>
@@ -121,12 +162,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
 
             {/* True Twist */}
-            <div className="mb-4">
+            <div className="mb-3.5">
               <div className="flex justify-between items-baseline">
                 <span className="font-bold text-xs text-slate-900">MERN Stack Developer Intern</span>
                 <span className="text-xs font-semibold text-slate-600">Completed</span>
               </div>
-              <div className="text-xs font-medium text-blue-900 mb-1">True Twist — Ahmedabad, Gujarat</div>
+              <div className="text-xs font-semibold text-blue-800 mb-1">True Twist — Ahmedabad, Gujarat</div>
               <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-slate-700">
                 <li>Developed full-stack web applications utilizing MongoDB, Express.js, React.js, and Node.js (MERN Stack) paired with clean, responsive HTML5/CSS3 interfaces.</li>
                 <li>Designed and integrated RESTful APIs, managed backend database queries and schemas, and implemented structured client-server input validation.</li>
@@ -136,8 +177,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Technical Focus Areas */}
-          <div className="mb-6">
-            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-800 uppercase border-b border-slate-300 pb-1 mb-2">
+          <div className="mb-5">
+            <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2 font-mono">
               TECHNICAL FOCUS AREAS
             </h2>
             <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-slate-700">
@@ -148,15 +189,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Education */}
-          <div className="mb-6">
-            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-800 uppercase border-b border-slate-300 pb-1 mb-2">
+          <div className="mb-4">
+            <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2 font-mono">
               EDUCATION
             </h2>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-xs text-slate-900">Bachelor of Science in Information Technology (B.Sc. IT)</span>
               <span className="text-xs font-semibold text-slate-600">2023 – 2026</span>
             </div>
-            <div className="text-xs text-blue-900">LJ University — Ahmedabad, Gujarat</div>
+            <div className="text-xs text-blue-800">LJ University — Ahmedabad, Gujarat</div>
             <p className="text-[11px] text-slate-600 mt-1">
               Relevant Coursework: Computer Networking Architecture, Database Management Systems (DBMS), Software Engineering, Data Structures, and Programming Paradigms.
             </p>
@@ -164,15 +205,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Additional Details */}
           <div>
-            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-800 uppercase border-b border-slate-300 pb-1 mb-2">
+            <h2 className="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2 font-mono">
               ADDITIONAL DETAILS
             </h2>
-            <div className="text-xs text-slate-700 space-y-1">
+            <div className="text-xs text-slate-700 space-y-0.5">
               <p><strong>Languages:</strong> English, Hindi, Gujarati</p>
-              <p><strong>Preferred Locations:</strong> Ahmedabad, Vadodara, Gandhinagar, Surat (Ready to Relocate)</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>

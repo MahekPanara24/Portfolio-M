@@ -20,7 +20,7 @@ export const Showcase: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-mono text-blue-400 mb-3 tracking-wider uppercase font-semibold">
             Feature Architecture • Cybersecurity Systems
           </div>
@@ -33,25 +33,31 @@ export const Showcase: React.FC = () => {
           <p className="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed px-4">
             Every system is audited and engineered for resilience. Select any architecture below to inspect defensive workflows, threat mitigation mechanisms, and verified technical outcomes.
           </p>
+        </div>
 
-          {/* Full-width Responsive Grid Tabs (No scrollbar, uses whole row space) */}
-          <div className="w-full max-w-5xl mx-auto mt-8 p-1.5 sm:p-2 rounded-2xl bg-[#10141e] border border-slate-800 shadow-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
-              {tabs.map((tab, idx) => (
-                <button
-                  key={tab.code}
-                  onClick={() => setSelectedIdx(idx)}
-                  className={`flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-all w-full text-center ${
-                    selectedIdx === idx
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-                  }`}
-                >
-                  <span className="font-bold opacity-80">{tab.code}</span>
-                  <span>{tab.name}</span>
-                </button>
-              ))}
-            </div>
+        {/* Full-width Responsive Grid Tabs (No scrollbar, uses whole row space) */}
+        <div className="w-full max-w-5xl mx-auto mb-10 p-1.5 sm:p-2 rounded-2xl bg-[#10141e] border border-slate-800 shadow-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
+            {tabs.map((tab, idx) => (
+              <button
+                key={tab.code}
+                onClick={() => setSelectedIdx(idx)}
+                className={`group flex items-center justify-center gap-2.5 px-3.5 py-3 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-all w-full text-center whitespace-nowrap ${
+                  selectedIdx === idx
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                }`}
+              >
+                <span className={`px-1.5 py-0.5 rounded text-[11px] font-mono shrink-0 transition-colors ${
+                  selectedIdx === idx
+                    ? 'bg-blue-950/90 text-blue-200 border border-blue-400/30'
+                    : 'bg-slate-900/90 text-blue-400 border border-slate-800 group-hover:border-slate-700'
+                }`}>
+                  {tab.code}
+                </span>
+                <span className="truncate">{tab.name}</span>
+              </button>
+            ))}
           </div>
         </div>
 

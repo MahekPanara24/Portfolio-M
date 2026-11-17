@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
 import { ExecutiveOverview } from './components/ExecutiveOverview';
-import { Whiteboard } from './components/Whiteboard';
 import { Showcase } from './components/Showcase';
 import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
@@ -96,9 +95,6 @@ export function App() {
 
         {/* Editorial Newspaper Overview with Polaroid ID Card */}
         <ExecutiveOverview />
-
-        {/* Interactive Studio Whiteboard Canvas */}
-        <Whiteboard />
 
         {/* Tabbed Feature Architecture Showcase */}
         <Showcase />

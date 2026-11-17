@@ -24,7 +24,6 @@ A modern, editorial portfolio website built with **React 19**, **Tailwind CSS v4
 - **Editorial Newspaper Overview:** Systems architecture, threat defense, and verified credentials with interactive Polaroid badge.
 - **2D Concentric Orbiting Avatar:** Multi-ring CSS/Framer-Motion animation with live status beacon.
 - **Continuous Technology Marquee:** Smooth infinite ticker highlighting core security capabilities and networking protocols.
-- **Interactive Studio Whiteboard:** Interactive HTML5 canvas with drawing tools, endorsement stamps (`APPROVED`, `LGTM`, `SHIPPED`, `HIRED`), and souvenir export.
 - **Tabbed Architectural Showcase:** In-depth 3-tier security breakdowns (Client Defense, API Logic, Database Hardening) across production projects.
 - **Interactive Analyst Shell:** Command-line terminal supporting `help`, `whoami`, `skills`, `projects`, `contact`, and `clear`.
 - **Integrated PDF Resume:** Direct download of authentic 2-page PDF and isolated print styles.

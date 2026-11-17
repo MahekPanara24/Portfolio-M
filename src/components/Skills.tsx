@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Shield, Code, Activity, Check, Radio, Award } from 'lucide-react';
 import { skillCategories, securityCertifications } from '../data/portfolioData';
 
@@ -52,7 +52,7 @@ export const Skills: React.FC = () => {
             <button
               key={category.title}
               onClick={() => setActiveTab(idx)}
-              className={`flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 w-full text-center ${
+              className={`flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl font-medium text-xs sm:text-sm transition-colors duration-200 w-full text-center ${
                 activeTab === idx
                   ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
                   : 'bg-[#0d131f] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
@@ -65,7 +65,7 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Skills Cards Grid */}
-        <motion.div
+        <m.div
           key={activeTab}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export const Skills: React.FC = () => {
           {skillCategories[activeTab].skills.map((skill, idx) => (
             <div
               key={skill.name}
-              className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-all shadow-md group"
+              className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-colors shadow-md group"
             >
               <div className="flex items-center justify-between mb-2">
                 <h4 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
@@ -88,11 +88,12 @@ export const Skills: React.FC = () => {
 
               {/* Solid Blue Animated Progress Bar */}
               <div className="w-full h-2.5 rounded-full bg-slate-900 overflow-hidden mb-3">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${skill.level}%` }}
+                <m.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: skill.level / 100 }}
                   transition={{ duration: 0.7, delay: idx * 0.08 }}
-                  className="h-full bg-blue-500 rounded-full"
+                  style={{ width: '100%' }}
+                  className="h-full bg-blue-500 rounded-full origin-left"
                 />
               </div>
 
@@ -112,7 +113,7 @@ export const Skills: React.FC = () => {
               </div>
             </div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Core Competencies Ribbon */}
         <div className="mb-16">
@@ -123,7 +124,7 @@ export const Skills: React.FC = () => {
             {coreCompetencies.map((comp) => (
               <div
                 key={comp.title}
-                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800/80 hover:border-slate-700 transition-all"
+                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800/80 hover:border-slate-700 transition-colors"
               >
                 <div className="flex items-center gap-2 text-blue-400 text-xs sm:text-sm font-bold font-mono mb-2">
                   <Check className="w-4 h-4 text-blue-400 shrink-0" />
@@ -155,7 +156,7 @@ export const Skills: React.FC = () => {
             {securityCertifications.map((cert) => (
               <div
                 key={cert.name}
-                className="p-5 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/50 transition-colors group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">

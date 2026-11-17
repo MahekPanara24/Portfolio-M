@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Shield, GraduationCap, Briefcase, Award, FileText, ExternalLink, Terminal } from 'lucide-react';
 import { securityBadges, personalInfo } from '../data/portfolioData';
 
@@ -71,9 +71,9 @@ export const ExecutiveOverview: React.FC = () => {
 
           {/* Center Column (3 cols): Polaroid ID Card */}
           <div className="lg:col-span-3 flex flex-col items-center">
-            <motion.div
+            <m.div
               whileHover={{ rotate: 0, scale: 1.02 }}
-              className="w-full max-w-xs p-5 rounded-2xl bg-white text-slate-900 shadow-2xl rotate-0 sm:rotate-[-2deg] transition-all relative border border-slate-200"
+              className="w-full max-w-xs p-5 rounded-2xl bg-white text-slate-900 shadow-2xl rotate-0 sm:rotate-[-2deg] transition-transform relative border border-slate-200"
             >
               {/* Paperclip graphic */}
               <div className="w-12 h-4 rounded-full bg-slate-300 absolute -top-2 left-1/2 -translate-x-1/2 border border-slate-400/50 shadow-sm" />
@@ -94,7 +94,7 @@ export const ExecutiveOverview: React.FC = () => {
                   <span className="text-blue-600 font-bold">✓ Verified</span>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Direct Download for Sample Security Audit Report */}
             <a
@@ -102,7 +102,7 @@ export const ExecutiveOverview: React.FC = () => {
               download="Mahek_Panara_Security_Assessment_Report.pdf"
               target="_blank"
               rel="noreferrer"
-              className="w-full max-w-xs mt-4 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-bold transition-all shadow-md hover:shadow-blue-500/20 text-center"
+              className="w-full max-w-xs mt-4 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-bold transition-colors shadow-md hover:shadow-blue-500/20 text-center"
             >
               <FileText className="w-4 h-4 shrink-0" />
               <span>Sample Audit Report (PDF)</span>
@@ -190,7 +190,7 @@ export const ExecutiveOverview: React.FC = () => {
             {securityBadges.map((badge) => (
               <div
                 key={badge.platform}
-                className="p-5 rounded-2xl bg-[#0b0e15] border border-slate-800 hover:border-blue-500/50 transition-all group text-left"
+                className="p-5 rounded-2xl bg-[#0b0e15] border border-slate-800 hover:border-blue-500/50 transition-colors group text-left"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-300 border border-blue-800/80 font-bold">

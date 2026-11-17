@@ -56,7 +56,7 @@ export const Contact: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             
             {/* Email Card */}
-            <div className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-all flex items-center justify-between">
+            <div className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-colors flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
                   <Mail className="w-6 h-6" />
@@ -78,7 +78,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Phone Card */}
-            <div className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-all flex items-center justify-between">
+            <div className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-colors flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
                   <Phone className="w-6 h-6" />
@@ -209,7 +209,7 @@ export const Contact: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
+                    className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Message</span>

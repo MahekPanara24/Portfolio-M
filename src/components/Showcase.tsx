@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { Check, Code, Server, Database, Lock } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 import { GithubIcon } from './Icons';
@@ -42,7 +42,7 @@ export const Showcase: React.FC = () => {
               <button
                 key={tab.code}
                 onClick={() => setSelectedIdx(idx)}
-                className={`group flex items-center justify-center gap-2.5 px-3.5 py-3 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-all w-full text-center whitespace-nowrap ${
+                className={`group flex items-center justify-center gap-2.5 px-3.5 py-3 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-colors w-full text-center whitespace-nowrap ${
                   selectedIdx === idx
                     ? 'bg-blue-600 text-white shadow-md'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -63,7 +63,7 @@ export const Showcase: React.FC = () => {
 
         {/* Large Architecture Display Card */}
         <AnimatePresence mode="wait">
-          <motion.div
+          <m.div
             key={activeProject.id}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ export const Showcase: React.FC = () => {
               </div>
             </div>
 
-          </motion.div>
+          </m.div>
         </AnimatePresence>
 
       </div>

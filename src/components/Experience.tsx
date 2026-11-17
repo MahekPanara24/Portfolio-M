@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { GraduationCap, MapPin, Calendar, Check, Shield, Briefcase } from 'lucide-react';
 import { experiences } from '../data/portfolioData';
 
@@ -28,7 +28,7 @@ export const Experience: React.FC = () => {
             const isOngoing = exp.status === 'Ongoing';
 
             return (
-              <motion.div
+              <m.div
                 key={`${exp.organization}-${exp.role}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export const Experience: React.FC = () => {
               >
                 {/* 2D Node checkpoint */}
                 <div
-                  className={`absolute -left-[17px] top-2 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                  className={`absolute -left-[17px] top-2 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${
                     isOngoing
                       ? 'bg-[#07090e] border-blue-500 text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.5)]'
                       : 'bg-slate-900 border-slate-700 text-slate-400'
@@ -54,10 +54,10 @@ export const Experience: React.FC = () => {
                 </div>
 
                 {/* Main Card */}
-                <motion.div
+                <m.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="p-6 sm:p-8 rounded-2xl bg-[#0c1018] border border-slate-800/90 hover:border-blue-500/50 transition-all shadow-lg hover:shadow-2xl"
+                  className="p-6 sm:p-8 rounded-2xl bg-[#0c1018] border border-slate-800/90 hover:border-blue-500/50 transition-colors shadow-lg hover:shadow-2xl"
                 >
                   {/* Card Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
@@ -122,8 +122,8 @@ export const Experience: React.FC = () => {
                     </div>
                   </div>
 
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             );
           })}
         </div>

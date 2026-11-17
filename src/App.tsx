@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { LazyMotion, domAnimation } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
@@ -71,7 +72,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-300">
+    <LazyMotion features={domAnimation}>
+      <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-300">
       {/* Editorial Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeOpen(true)}
@@ -123,5 +125,6 @@ export default function App() {
         onClose={() => setIsTerminalOpen(false)}
       />
     </div>
+  </LazyMotion>
   );
 }

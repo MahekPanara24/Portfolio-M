@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Volume2, VolumeX, Terminal, ArrowUpRight, Menu, X, FileDown, FileText } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 
 interface NavbarProps {
   onOpenResume: () => void;
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
       
       {/* Top Editorial Ticker Bar */}
       <div className="bg-[#080a0f] border-b border-slate-800/80 py-2 px-6 text-xs font-mono text-slate-300 hidden md:flex items-center justify-between select-none">
@@ -72,14 +72,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Floating Navigation Bar */}
-      <div className={`transition-all duration-300 px-3 sm:px-6 lg:px-8 py-3 ${
+      <div className={`transition-colors duration-300 px-3 sm:px-6 lg:px-8 py-3 ${
         scrolled ? 'bg-[#0b0e14]/90 backdrop-blur-md border-b border-slate-800 shadow-xl' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           
           {/* Logo / Badge */}
           <a href="#home" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600/15 border border-blue-500/40 flex items-center justify-center font-bold text-sm text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600/15 border border-blue-500/40 flex items-center justify-center font-bold text-sm text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
               MP
             </div>
             <div className="text-left">
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                     isActive
                       ? 'bg-blue-600 text-white shadow-sm'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -161,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Let's Connect CTA */}
             <a
               href="#contact"
-              className="flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm hover:shadow-md whitespace-nowrap"
+              className="flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm transition-colors shadow-sm hover:shadow-md whitespace-nowrap"
             >
               <span>Connect</span>
               <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -183,10 +183,11 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+          <m.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
             className="lg:hidden bg-[#0b0e14] border-b border-slate-800 px-4 py-4 space-y-2 shadow-2xl"
           >
             {navLinks.map((link) => (
@@ -222,7 +223,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>Audit Report (PDF)</span>
               </a>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 

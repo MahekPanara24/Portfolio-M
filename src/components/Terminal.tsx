@@ -228,7 +228,7 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
       <div
-        className={`bg-[#0a0e17] border border-blue-500/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ${
+        className={`bg-[#0a0e17] border border-blue-500/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-[max-width,height,transform] duration-300 ${
           isMaximized ? 'w-full h-full' : 'w-full max-w-3xl h-[560px]'
         }`}
       >

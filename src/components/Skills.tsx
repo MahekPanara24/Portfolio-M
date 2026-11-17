@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { m } from 'framer-motion';
 import { Shield, Code, Activity, Check, Radio, Award } from 'lucide-react';
 import { skillCategories, securityCertifications } from '../data/portfolioData';
+import { SectionHeader } from './SectionHeader';
 
 export const Skills: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -34,17 +35,15 @@ export const Skills: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-mono text-blue-400 mb-3">
-            <span>TECHNICAL SKILLS</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Cybersecurity & <span className="text-blue-400">Full-Stack Competencies</span>
-          </h2>
-          <p className="mt-4 text-slate-400 text-base">
-            Structured skillsets gained through B.Sc. IT coursework, Demmisto Technologies specialized training, and True Twist internship.
-          </p>
-        </div>
+        <SectionHeader
+          badge="TECHNICAL SKILLS"
+          title={
+            <>
+              Cybersecurity & <span className="text-blue-400">Full-Stack Competencies</span>
+            </>
+          }
+          subtitle="Structured skillsets gained through B.Sc. IT coursework, Demmisto Technologies specialized training, and True Twist internship."
+        />
 
         {/* Full-width Responsive Grid Tab Navigation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-5xl mx-auto mb-12">

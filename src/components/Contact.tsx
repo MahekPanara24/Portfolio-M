@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Copy, Check, Send, ExternalLink, Shield } from 'lu
 import confetti from 'canvas-confetti';
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
+import { SectionHeader } from './SectionHeader';
 
 export const Contact: React.FC = () => {
   const [copiedField, setCopiedField] = useState<string | null>(null);
@@ -38,17 +39,15 @@ export const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-mono text-blue-400 mb-3">
-            <span>GET IN TOUCH</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Connect & <span className="text-blue-400">Discuss Opportunities</span>
-          </h2>
-          <p className="mt-4 text-slate-400 text-base">
-            Seeking an entry-level Cybersecurity Analyst, SOC Analyst, or Application Security role. Ready to relocate and start immediately.
-          </p>
-        </div>
+        <SectionHeader
+          badge="GET IN TOUCH"
+          title={
+            <>
+              Connect & <span className="text-blue-400">Discuss Opportunities</span>
+            </>
+          }
+          subtitle="Seeking an entry-level Cybersecurity Analyst, SOC Analyst, or Application Security role. Ready to relocate and start immediately."
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 text-left">
           
@@ -161,8 +160,9 @@ export const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
+                      <label htmlFor="contact-name" className="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={formData.name}
@@ -172,8 +172,9 @@ export const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-slate-400 mb-1">Email Address</label>
+                      <label htmlFor="contact-email" className="block text-xs font-mono text-slate-400 mb-1">Email Address</label>
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         value={formData.email}
@@ -185,8 +186,9 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-400 mb-1">Subject</label>
+                    <label htmlFor="contact-subject" className="block text-xs font-mono text-slate-400 mb-1">Subject</label>
                     <input
+                      id="contact-subject"
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -196,8 +198,9 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-400 mb-1">Message</label>
+                    <label htmlFor="contact-message" className="block text-xs font-mono text-slate-400 mb-1">Message</label>
                     <textarea
+                      id="contact-message"
                       rows={4}
                       required
                       value={formData.message}

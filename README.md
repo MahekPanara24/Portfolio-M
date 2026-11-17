@@ -7,6 +7,7 @@ A modern, editorial portfolio website built with **React 19**, **Tailwind CSS v4
 ---
 
 ## 🛡️ Profile Overview
+
 - **Name:** Mahek Panara
 - **Role:** Cybersecurity Analyst Aspirant | Network Defense & Threat Mitigation
 - **Education:** B.Sc. Information Technology — LJ University (2023 – 2026)
@@ -21,6 +22,7 @@ A modern, editorial portfolio website built with **React 19**, **Tailwind CSS v4
 ---
 
 ## ⚡ Key Highlights & Architecture
+
 - **Editorial Newspaper Overview:** Systems architecture, threat defense, and verified credentials with interactive Polaroid badge.
 - **2D Concentric Orbiting Avatar:** Multi-ring CSS/Framer-Motion animation with live status beacon.
 - **Continuous Technology Marquee:** Smooth infinite ticker highlighting core security capabilities and networking protocols.
@@ -49,6 +51,7 @@ npm run preview
 ---
 
 ## 🌐 GitHub Pages Deployment
-This repository is configured with an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml`. Every push to `main` builds and publishes the live site automatically to:
-**https://krishjadav30.github.io/Portfolio-M/**
 
+This repository is configured with an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml`. Every push to `main` builds and publishes the live site automatically to:
+
+[https://krishjadav30.github.io/Portfolio-M/](https://krishjadav30.github.io/Portfolio-M/)

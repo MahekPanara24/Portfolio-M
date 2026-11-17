@@ -3,31 +3,24 @@
 @layer base {
   :root {
     --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  }
-
-  * {
-    border-color: rgba(255, 255, 255, 0.08);
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-handwriting: 'Caveat', cursive;
+    --font-mono: 'JetBrains Mono', monospace;
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #07090e;
+    background-color: #0b0e14;
     color: #f1f5f9;
-    letter-spacing: -0.011em;
+    letter-spacing: -0.012em;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
-    letter-spacing: -0.025em;
-    font-weight: 700;
-  }
-
-  /* Minimalist scrollbar */
+  /* Custom subtle scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #07090e;
+    background: #0b0e14;
   }
   ::-webkit-scrollbar-thumb {
     background: #1e293b;
@@ -38,22 +31,69 @@
   }
 }
 
-/* Crisp solid pattern */
-.solid-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Infinite Marquee */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 50s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Orbiting dashed ring */
+@keyframes orbitRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbitRing 25s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbitRing 35s linear infinite reverse;
+}
+
+/* Subtle dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* Print Isolation: Print ONLY the resume document, NOT the background website */
 @media print {
   @page {
-    margin: 12mm 15mm;
+    margin: 10mm 15mm;
     size: A4 portrait;
   }
 
-  /* Hide entire website and modal backdrop */
   nav, main, footer, .no-print, [role="dialog"] > div:first-child {
     display: none !important;
   }
@@ -89,7 +129,6 @@
     background: #ffffff !important;
     color: #000000 !important;
     overflow: visible !important;
-    page-break-after: auto;
   }
 
   #printable-resume * {

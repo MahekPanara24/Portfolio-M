@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Code, Database, Check } from 'lucide-react';
+import { Shield, Code, Activity, Check } from 'lucide-react';
 import { skillCategories } from '../data/portfolioData';
 
 export const Skills: React.FC = () => {
@@ -10,10 +10,10 @@ export const Skills: React.FC = () => {
     switch (iconName) {
       case 'Shield':
         return <Shield className="w-5 h-5 text-blue-400" />;
+      case 'Activity':
+        return <Activity className="w-5 h-5 text-sky-400" />;
       case 'Code':
         return <Code className="w-5 h-5 text-indigo-400" />;
-      case 'Database':
-        return <Database className="w-5 h-5 text-sky-400" />;
       default:
         return <Shield className="w-5 h-5 text-blue-400" />;
     }
@@ -76,16 +76,16 @@ export const Skills: React.FC = () => {
               className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-all shadow-md group"
             >
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-base font-bold text-white group-hover:text-blue-300 transition-colors">
+                <h4 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
                   {skill.name}
                 </h4>
-                <span className="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-900/60">
+                <span className="text-xs sm:text-sm font-mono text-blue-300 bg-blue-950 px-3 py-1 rounded border border-blue-800 font-semibold">
                   {skill.level}%
                 </span>
               </div>
 
               {/* Solid Blue Animated Progress Bar */}
-              <div className="w-full h-2 rounded-full bg-slate-900 overflow-hidden mb-3">
+              <div className="w-full h-2.5 rounded-full bg-slate-900 overflow-hidden mb-3">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${skill.level}%` }}
@@ -94,15 +94,15 @@ export const Skills: React.FC = () => {
                 />
               </div>
 
-              <p className="text-xs text-slate-300 mb-3 leading-relaxed">
+              <p className="text-sm text-slate-200 mb-4 leading-relaxed">
                 {skill.description}
               </p>
 
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {skill.tags.map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
+                    className="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-200 border border-slate-800"
                   >
                     {tag}
                   </span>
@@ -123,11 +123,11 @@ export const Skills: React.FC = () => {
                 key={idx}
                 className="p-4 rounded-xl bg-[#0d131f] border border-slate-800/80 hover:border-slate-700 transition-all"
               >
-                <div className="flex items-center gap-2 text-blue-400 text-xs font-bold font-mono mb-1.5">
-                  <Check className="w-3.5 h-3.5 text-blue-400" />
-                  {comp.title}
+                <div className="flex items-center gap-2 text-blue-400 text-xs sm:text-sm font-bold font-mono mb-2">
+                  <Check className="w-4 h-4 text-blue-400 shrink-0" />
+                  <span>{comp.title}</span>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   {comp.desc}
                 </p>
               </div>

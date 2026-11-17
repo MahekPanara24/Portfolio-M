@@ -5,8 +5,8 @@ import { experiences } from '../data/portfolioData';
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-[#07090e]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="work" className="py-24 relative overflow-hidden bg-[#07090e]">
+      <div id="experience" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -65,18 +65,18 @@ export const Experience: React.FC = () => {
                       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
                         {exp.role}
                       </h3>
-                      <div className="text-sm font-semibold text-blue-400 mt-1 flex items-center gap-2">
+                      <div className="text-base font-semibold text-blue-400 mt-1 flex items-center gap-2">
                         <span>{exp.organization}</span>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-2 shrink-0">
-                      <span className="text-xs text-slate-300 font-medium flex items-center gap-1.5 bg-[#141a26] px-3 py-1 rounded-lg border border-slate-800">
-                        <Calendar className="w-3.5 h-3.5 text-blue-400" />
+                      <span className="text-xs sm:text-sm text-slate-200 font-medium flex items-center gap-1.5 bg-[#141a26] px-3.5 py-1.5 rounded-lg border border-slate-800">
+                        <Calendar className="w-4 h-4 text-blue-400" />
                         {exp.period}
                       </span>
                       <span
-                        className={`text-xs font-semibold px-3 py-1 rounded-lg border ${
+                        className={`text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-lg border ${
                           isOngoing
                             ? 'bg-blue-600 text-white border-blue-500 shadow-sm'
                             : 'bg-slate-800 text-slate-200 border-slate-700'
@@ -88,7 +88,7 @@ export const Experience: React.FC = () => {
                   </div>
 
                   {/* Location Tag */}
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-5 font-medium">
+                  <div className="flex items-center gap-2 text-sm text-slate-300 mb-5 font-medium">
                     <MapPin className="w-4 h-4 text-blue-400" />
                     <span>{exp.location}</span>
                   </div>
@@ -96,9 +96,9 @@ export const Experience: React.FC = () => {
                   {/* Bullet Points */}
                   <ul className="space-y-3 mb-6">
                     {exp.points.map((pt, pIdx) => (
-                      <li key={pIdx} className="text-sm text-slate-300 leading-relaxed flex items-start gap-3">
+                      <li key={pIdx} className="text-sm sm:text-base text-slate-200 leading-relaxed flex items-start gap-3">
                         <span className="p-0.5 rounded-full bg-blue-500/10 text-blue-400 shrink-0 mt-1">
-                          <Check className="w-3.5 h-3.5" />
+                          <Check className="w-4 h-4" />
                         </span>
                         <span>{pt}</span>
                       </li>
@@ -107,14 +107,14 @@ export const Experience: React.FC = () => {
 
                   {/* Skills Tags */}
                   <div className="pt-4 border-t border-slate-800/80">
-                    <div className="text-xs text-slate-400 font-semibold mb-2.5 uppercase tracking-wider">
+                    <div className="text-xs font-mono text-blue-400 font-bold mb-3 uppercase tracking-wider">
                       Key Competencies:
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {exp.skillsGained.map((skill, sIdx) => (
                         <span
                           key={sIdx}
-                          className="text-xs font-medium px-3 py-1 rounded-lg bg-[#141a26] text-slate-200 border border-slate-800 hover:border-blue-500/40 transition-colors"
+                          className="text-xs sm:text-sm font-medium px-3.5 py-1.5 rounded-lg bg-[#141a26] text-slate-200 border border-slate-800 hover:border-blue-500/40 transition-colors"
                         >
                           {skill}
                         </span>

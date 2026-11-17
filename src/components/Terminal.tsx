@@ -99,17 +99,6 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
         );
         break;
 
-      case 'relocate':
-        response = (
-          <div className="text-xs space-y-1">
-            <p className="text-blue-400 font-bold">📍 Relocation Status: Ready & Available</p>
-            <p className="text-slate-300">
-              Open to Relocate across: <strong>Ahmedabad, Vadodara, Gandhinagar, Surat & Gujarat</strong>.
-            </p>
-            <p className="text-slate-400">Notice: Immediate Joining</p>
-          </div>
-        );
-        break;
 
       case 'contact':
         response = (

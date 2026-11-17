@@ -62,15 +62,15 @@ export const Contact: React.FC = () => {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 font-mono">Email Direct</div>
-                  <a href={`mailto:${personalInfo.email}`} className="text-sm font-bold text-white hover:text-blue-400 transition-colors">
+                  <div className="text-xs text-slate-300 font-mono font-semibold">Email Direct</div>
+                  <a href={`mailto:${personalInfo.email}`} className="text-base font-bold text-white hover:text-blue-400 transition-colors">
                     {personalInfo.email}
                   </a>
                 </div>
               </div>
               <button
                 onClick={() => copyToClipboard(personalInfo.email, 'email')}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                className="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors"
                 title="Copy email"
               >
                 {copiedField === 'email' ? <Check className="w-4 h-4 text-blue-400" /> : <Copy className="w-4 h-4" />}
@@ -84,15 +84,15 @@ export const Contact: React.FC = () => {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 font-mono">Phone / WhatsApp</div>
-                  <a href={`tel:${personalInfo.phone}`} className="text-sm font-bold text-white hover:text-blue-400 transition-colors">
+                  <div className="text-xs text-slate-300 font-mono font-semibold">Phone / WhatsApp</div>
+                  <a href={`tel:${personalInfo.phone}`} className="text-base font-bold text-white hover:text-blue-400 transition-colors">
                     {personalInfo.phone}
                   </a>
                 </div>
               </div>
               <button
                 onClick={() => copyToClipboard(personalInfo.phone, 'phone')}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                className="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors"
                 title="Copy phone"
               >
                 {copiedField === 'phone' ? <Check className="w-4 h-4 text-blue-400" /> : <Copy className="w-4 h-4" />}
@@ -106,8 +106,8 @@ export const Contact: React.FC = () => {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400">Location</div>
-                  <div className="text-sm font-bold text-white">{personalInfo.location}</div>
+                  <div className="text-xs text-slate-300 font-mono font-semibold">Location</div>
+                  <div className="text-base font-bold text-white">{personalInfo.location}</div>
                 </div>
               </div>
             </div>
@@ -118,22 +118,22 @@ export const Contact: React.FC = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 flex items-center justify-center gap-2 text-slate-200 text-xs font-semibold hover:text-blue-400 transition-colors"
+                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 flex items-center justify-center gap-2 text-slate-200 text-sm font-semibold hover:text-blue-400 transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4 text-blue-400" />
                 <span>LinkedIn</span>
-                <ExternalLink className="w-3 h-3 text-slate-500" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
               </a>
 
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 flex items-center justify-center gap-2 text-slate-200 text-xs font-semibold hover:text-blue-400 transition-colors"
+                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 flex items-center justify-center gap-2 text-slate-200 text-sm font-semibold hover:text-blue-400 transition-colors"
               >
                 <GithubIcon className="w-4 h-4 text-blue-400" />
                 <span>GitHub</span>
-                <ExternalLink className="w-3 h-3 text-slate-500" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
               </a>
             </div>
 

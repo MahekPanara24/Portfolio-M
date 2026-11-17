@@ -3,6 +3,8 @@ import { Shield, ArrowUp, Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -71,7 +73,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Credits */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-3">
           <p>
-            © {new Date().getFullYear()} Mahek Panara. All rights reserved.
+            © {CURRENT_YEAR} Mahek Panara. All rights reserved.
           </p>
           <p className="flex items-center gap-1.5">
             <span>Ahmedabad, Gujarat</span>

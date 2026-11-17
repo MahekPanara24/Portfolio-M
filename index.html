@@ -11,9 +11,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" crossorigin href="./assets/index-74wmQuR2.css">
   </head>
   <body class="bg-[#0b0e14] text-slate-100 selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden font-sans">
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script type="module">
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        import('./src/main.tsx');
+      } else {
+        import('./assets/index-OqCvq_hL.js');
+      }
+    </script>
   </body>
 </html>

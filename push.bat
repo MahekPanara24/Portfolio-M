@@ -2,7 +2,7 @@
 echo ==============================================
 echo Pushing Portfolio-M to GitHub (MahekPanara24)
 echo ==============================================
-git push -u origin main
+git push -u origin main --force
 if %ERRORLEVEL% EQU 0 (
     echo.
     echo [SUCCESS] Pushed successfully to https://github.com/MahekPanara24/Portfolio-M
@@ -13,6 +13,6 @@ if %ERRORLEVEL% EQU 0 (
     echo [NOTICE] If the repository does not exist yet on GitHub:
     echo 1. Open https://github.com/new?name=Portfolio-M
     echo 2. Set Public, leave README unchecked, click "Create repository"
-    echo 3. Run this script again or run "git push -u origin main"!
+    echo 3. Run this script again or run "git push -u origin main --force"!
 )
 pause

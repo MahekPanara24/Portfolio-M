@@ -11,7 +11,7 @@ import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
 import { TerminalModal } from './components/Terminal';
 
-export function App() {
+export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -125,5 +125,3 @@ export function App() {
     </div>
   );
 }
-
-export default App;

@@ -12,13 +12,6 @@ export const personalInfo = {
   summary: `Detail-oriented B.Sc. IT graduate and aspiring Cybersecurity Analyst with specialized training in network defense, web vulnerability assessment, and threat mitigation at Demmisto Technologies. Possesses hands-on engineering experience in full-stack web architectures (MERN Stack) from True Twist, providing a distinctive code-level perspective for diagnosing application vulnerabilities, evaluating authentication flows, and implementing robust defensive remediations. Seeking an entry-level Cybersecurity Analyst, SOC Analyst, or Information Security role.`,
 };
 
-export const stats = [
-  { label: 'Primary Specialization', value: 'Cybersecurity Defense' },
-  { label: 'Specialized Training', value: 'Demmisto Technologies' },
-  { label: 'Academic Merit', value: 'B.Sc. IT (LJ University)' },
-  { label: 'Practical Experience', value: 'True Twist Internship' },
-];
-
 export const skillCategories: SkillCategory[] = [
   {
     title: 'Cybersecurity & Threat Defense',
@@ -50,21 +43,6 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Database Security & DBMS Schema', level: 86, description: 'MongoDB and relational DBMS structure with parameterized querying and restricted access rights.', tags: ['MongoDB', 'DBMS', 'Schema Hardening'] },
       { name: 'Git Version Hygiene & Code Review', level: 88, description: 'Agile team collaboration with Git, code audits, and secure version tracking.', tags: ['Git', 'Code Review', 'Agile Defense'] },
     ],
-  },
-];
-
-export const technicalFocusAreas = [
-  {
-    title: 'Cybersecurity Defense & Vulnerability Assessment',
-    description: 'Specialized practical training at Demmisto Technologies in network defense, automated and manual vulnerability scanning, threat surface evaluation, and structured security remediation.',
-  },
-  {
-    title: 'Network Protocols & Defense Architecture',
-    description: 'Academic foundation from LJ University in Computer Networking Architecture, secure protocol analysis, firewall routing concepts, and comprehensive data protection principles.',
-  },
-  {
-    title: 'Application Security & Secure Coding Insight',
-    description: 'Practical industry experience from True Twist engineering full-stack MERN systems, enabling direct source-code inspection of authentication flows, API endpoints, and injection vectors.',
   },
 ];
 

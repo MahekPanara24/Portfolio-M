@@ -1,0 +1,8 @@
+# RFC 9116 Security Disclosure Contact for Mahek Panara Portfolio
+Contact: mailto:mahekpanara24@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://krishjadav30.github.io/Portfolio-M/.well-known/security.txt
+Policy: https://krishjadav30.github.io/Portfolio-M/#contact
+Hiring: https://krishjadav30.github.io/Portfolio-M/#contact
+Acknowledgments: https://krishjadav30.github.io/Portfolio-M/

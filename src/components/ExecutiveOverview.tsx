@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, GraduationCap, Briefcase, Award } from 'lucide-react';
+import { Shield, GraduationCap, Briefcase, Award, FileText, ExternalLink, Terminal } from 'lucide-react';
+import { securityBadges, personalInfo } from '../data/portfolioData';
 
 export const ExecutiveOverview: React.FC = () => {
   return (
@@ -58,10 +59,18 @@ export const ExecutiveOverview: React.FC = () => {
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed text-justify">
               This dual foundation enables me to analyze threat vectors from both attacker and defender viewpoints, detect vulnerabilities before exploitation, and collaborate seamlessly with technical teams to implement robust security patches.
             </p>
+
+            {/* Defender Advantage Highlight Box */}
+            <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-blue-200 text-xs sm:text-sm font-medium leading-relaxed">
+              <span className="text-blue-400 font-bold uppercase tracking-wider block text-[11px] mb-1 font-mono">
+                ✦ The Defender Advantage
+              </span>
+              &ldquo;{personalInfo.advantageQuote}&rdquo;
+            </div>
           </div>
 
           {/* Center Column (3 cols): Polaroid ID Card */}
-          <div className="lg:col-span-3 flex justify-center">
+          <div className="lg:col-span-3 flex flex-col items-center">
             <motion.div
               whileHover={{ rotate: 0, scale: 1.02 }}
               className="w-full max-w-xs p-5 rounded-2xl bg-white text-slate-900 shadow-2xl rotate-0 sm:rotate-[-2deg] transition-all relative border border-slate-200"
@@ -86,6 +95,18 @@ export const ExecutiveOverview: React.FC = () => {
                 </div>
               </div>
             </motion.div>
+
+            {/* Direct Download for Sample Security Audit Report */}
+            <a
+              href="Mahek_Panara_Security_Assessment_Report.pdf"
+              download="Mahek_Panara_Security_Assessment_Report.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full max-w-xs mt-4 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-bold transition-all shadow-md hover:shadow-blue-500/20 text-center"
+            >
+              <FileText className="w-4 h-4 shrink-0" />
+              <span>Sample Audit Report (PDF)</span>
+            </a>
           </div>
 
           {/* Right Column (4 cols): Dashed Metric Cards */}
@@ -141,6 +162,62 @@ export const ExecutiveOverview: React.FC = () => {
 
           </div>
 
+        </div>
+
+        {/* Proof of Practice: Hands-on Lab Portals & RFC 9116 Disclosure */}
+        <div className="mt-16 pt-10 border-t border-slate-800/80">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div className="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">
+                // PROOF OF PRACTICE & HANDS-ON SECURITY LABS
+              </div>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight mt-1">
+                Verified Cyber Training & Offensive/Defensive Labs
+              </h3>
+            </div>
+            <a
+              href=".well-known/security.txt"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300 hover:text-white hover:border-blue-500 transition-colors w-fit"
+            >
+              <Terminal className="w-3.5 h-3.5 text-blue-400" />
+              <span>RFC 9116 security.txt</span>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {securityBadges.map((badge, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl bg-[#0b0e15] border border-slate-800 hover:border-blue-500/50 transition-all group text-left"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-300 border border-blue-800/80 font-bold">
+                    {badge.metrics}
+                  </span>
+                  <a
+                    href={badge.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-slate-400 hover:text-white transition-colors"
+                    aria-label={badge.platform}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+                <h4 className="text-base font-bold text-white group-hover:text-blue-300 transition-colors">
+                  {badge.platform}
+                </h4>
+                <div className="text-xs font-mono text-blue-400 mt-0.5">
+                  {badge.badgeTitle} • <span className="text-slate-300">{badge.status}</span>
+                </div>
+                <p className="text-xs text-slate-300 mt-2.5 leading-relaxed">
+                  {badge.focus}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

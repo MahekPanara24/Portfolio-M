@@ -2,47 +2,123 @@ import type { Project, SkillCategory, ExperienceItem } from '../types';
 
 export const personalInfo = {
   name: 'Mahek Panara',
-  title: 'Cybersecurity Analyst Aspirant | Network Defense & Threat Mitigation',
+  title: 'Cybersecurity Analyst Aspirant | SOC & Network Defense | Application Vulnerability Remediation',
   shortBio: 'B.Sc. IT graduate and aspiring Cybersecurity Analyst specializing in network defense, web vulnerability assessment, threat mitigation, and code-level application hardening.',
+  advantageQuote: 'Because I know how full-stack code is built, I know exactly where vulnerabilities hide and how to remediate them.',
   email: 'mahekpanara24@gmail.com',
   phone: '+91 6352760654',
   location: 'Ahmedabad, Gujarat, India',
   github: 'https://github.com/MahekPanara24',
   linkedin: 'https://linkedin.com/in/mahek-panara-159829327',
+  tryhackme: 'https://tryhackme.com/p/MahekPanara',
   summary: `Detail-oriented B.Sc. IT graduate and aspiring Cybersecurity Analyst with specialized training in network defense, web vulnerability assessment, and threat mitigation at Demmisto Technologies. Possesses hands-on engineering experience in full-stack web architectures (MERN Stack) from True Twist, providing a distinctive code-level perspective for diagnosing application vulnerabilities, evaluating authentication flows, and implementing robust defensive remediations. Seeking an entry-level Cybersecurity Analyst, SOC Analyst, or Information Security role.`,
 };
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'Cybersecurity & Threat Defense',
-    icon: 'Shield',
-    skills: [
-      { name: 'Web App Vulnerability Scanning', level: 92, description: 'Hands-on scanning, triage, and documentation of vulnerabilities in web applications and services.', tags: ['Vulnerability Assessment', 'OWASP Top 10', 'Web Defense'] },
-      { name: 'Threat Analysis & Mitigation', level: 90, description: 'Analyzing attack vectors, evaluating system exposures, and executing defensive mitigation strategies.', tags: ['Threat Modeling', 'Attack Surface Analysis', 'Patch Remediation'] },
-      { name: 'Security Assessment & Data Protection', level: 88, description: 'Conducting structured security assessments and implementing data protection protocols.', tags: ['Data Protection', 'Risk Assessment', 'Security Audits'] },
-      { name: 'Authentication & Session Integrity', level: 87, description: 'Analyzing access control mechanisms, session management, and authentication pipelines.', tags: ['Auth Flows', 'Session Hardening', 'Access Control'] },
-      { name: 'Incident Detection & SOC Fundamentals', level: 85, description: 'Monitoring traffic anomalies, log analysis awareness, and proactive threat triage.', tags: ['SOC Operations', 'Log Analysis', 'Incident Triage'] },
-    ],
-  },
-  {
-    title: 'Network Security & Protocols',
+    title: 'Network Analysis & Packet Inspection',
     icon: 'Activity',
     skills: [
-      { name: 'Network Defense & Architecture', level: 90, description: 'Comprehensive knowledge of OSI model layers, packet flow, firewall filtering, and subnet defense.', tags: ['TCP/IP', 'Firewalls', 'Routing Defense'] },
-      { name: 'Security Protocols Evaluation', level: 88, description: 'Assessing encryption protocols, SSL/TLS handshakes, and secure client-server communication channels.', tags: ['SSL/TLS', 'HTTPS', 'Security Protocols'] },
-      { name: 'Computer Networking Architecture', level: 89, description: 'Academic and lab foundation in network topologies, routing policies, and traffic inspection.', tags: ['Networking Architecture', 'Traffic Analysis'] },
-      { name: 'Systematic Security Debugging', level: 86, description: 'Methodical isolation of network misconfigurations, connection leaks, and permission faults.', tags: ['Network Debugging', 'Security Diagnostics'] },
+      { name: 'Wireshark & TCPDump Packet Analysis', level: 91, description: 'Hands-on packet dissection, analyzing TCP/IP 3-way handshakes, inspecting protocol anomalies, and capturing malicious traffic patterns.', tags: ['Wireshark', 'TCPDump', 'PCAP Analysis', 'Packet Inspection'] },
+      { name: 'Nmap Network Scanning & Recon', level: 93, description: 'Port discovery, OS fingerprinting, service version enumeration, and vulnerability probing using Nmap NSE scripts.', tags: ['Nmap', 'Port Scanning', 'NSE Scripts', 'Network Recon'] },
+      { name: 'TCP/IP Architecture & Subnetting', level: 90, description: 'Rigorous understanding of OSI & TCP/IP stack layers, CIDR subnetting, VLAN segmentation, and routing protocols.', tags: ['TCP/IP', 'OSI Model', 'CIDR Subnets', 'Routing Protocols'] },
+      { name: 'Firewalls, ACLs & Network Defense', level: 88, description: 'Configuring stateless and stateful firewall rules, access control lists (ACLs), and traffic isolation boundaries.', tags: ['Firewalls', 'ACLs', 'IPTables', 'Network Defense'] },
     ],
   },
   {
-    title: 'Secure Full-Stack & Systems',
+    title: 'Web App Security & Proxying',
+    icon: 'Shield',
+    skills: [
+      { name: 'Burp Suite Community & Proxy Inspection', level: 92, description: 'Intercepting and modifying HTTP/S requests, analyzing authentication tokens, and testing endpoint parameters for vulnerabilities.', tags: ['Burp Suite', 'HTTP/S Interception', 'Repeater', 'Intruder'] },
+      { name: 'OWASP ZAP & Automated Scanning', level: 89, description: 'Executing automated vulnerability scans, spidering web applications, and triaging passive/active alert findings.', tags: ['OWASP ZAP', 'Automated Scanning', 'Vulnerability Triage'] },
+      { name: 'OWASP Top 10 Vulnerability Remediation', level: 91, description: 'Practical exploitation and remediation of Broken Access Control (IDOR), SQL/NoSQL Injection, and XSS across live test labs.', tags: ['OWASP Top 10', 'IDOR', 'SQLi', 'XSS Mitigation'] },
+      { name: 'Client-Server Input Sanitization', level: 92, description: 'Architecting robust server-side validation schemas, context-aware encoding, and parameter sanitization to block injection payloads.', tags: ['Input Validation', 'Parameter Hardening', 'Sanitization Middleware'] },
+    ],
+  },
+  {
+    title: 'SIEM, Monitoring & Log Triage',
+    icon: 'Radio',
+    skills: [
+      { name: 'Splunk Fundamentals & SPL Querying', level: 87, description: 'Searching, filtering, and correlating security logs using Splunk Search Processing Language (SPL) to isolate threat indicators.', tags: ['Splunk', 'SPL', 'Log Correlation', 'Threat Indicators'] },
+      { name: 'Wazuh EDR & SIEM Fundamentals', level: 85, description: 'Monitoring endpoint security alerts, file integrity monitoring (FIM), and policy violation detection.', tags: ['Wazuh', 'EDR', 'File Integrity', 'Alert Triage'] },
+      { name: 'Snort / Suricata IDS & Threat Rules', level: 86, description: 'Understanding signature-based intrusion detection systems (IDS/IPS) and writing detection rules for anomalous traffic.', tags: ['Snort', 'Suricata', 'IDS/IPS Rules', 'Signature Detection'] },
+      { name: 'Windows Event Viewer & Sysmon Triage', level: 88, description: 'Analyzing Event IDs (4624, 4625, 4688) for brute force detection, privilege escalation, and suspicious process creation.', tags: ['Sysmon', 'Windows Event Logs', 'Process Triage', 'Brute Force Detection'] },
+    ],
+  },
+  {
+    title: 'Security Frameworks & Standards',
     icon: 'Code',
     skills: [
-      { name: 'Secure Web Architecture (MERN)', level: 88, description: 'Deep architectural understanding of MongoDB, Express.js, React.js, and Node.js for code-level security.', tags: ['Secure Coding', 'React.js', 'Node.js', 'Express.js'] },
-      { name: 'Client-Server Input Sanitization', level: 90, description: 'Designing robust validation pipelines to prevent SQL/NoSQL injection, XSS, and payload tampering.', tags: ['Input Validation', 'Injection Defense', 'API Security'] },
-      { name: 'Database Security & DBMS Schema', level: 86, description: 'MongoDB and relational DBMS structure with parameterized querying and restricted access rights.', tags: ['MongoDB', 'DBMS', 'Schema Hardening'] },
-      { name: 'Git Version Hygiene & Code Review', level: 88, description: 'Agile team collaboration with Git, code audits, and secure version tracking.', tags: ['Git', 'Code Review', 'Agile Defense'] },
+      { name: 'MITRE ATT&CK Framework Mapping', level: 90, description: 'Mapping threat actor techniques (T1190, T1059, T1078) to defensive detection rules and telemetry checkpoints.', tags: ['MITRE ATT&CK', 'Threat Mapping', 'TTPs', 'Defensive Coverage'] },
+      { name: 'NIST Cybersecurity Framework (CSF)', level: 88, description: 'Structuring defensive operations across Identify, Protect, Detect, Respond, and Recover core functions.', tags: ['NIST CSF', 'Risk Assessment', 'Security Governance'] },
+      { name: 'Vulnerability Assessment & Audit Reporting', level: 92, description: 'Conducting structured audits, assigning CVSS v3.1 scores, and drafting executive-level remediation reports.', tags: ['CVSS v3.1', 'Audit Reports', 'Risk Scoring', 'Technical Remediation'] },
+      { name: 'Secure Code Review & MERN Architecture', level: 89, description: 'Auditing JavaScript/Node.js/Express backend routes, JWT session lifecycles, and MongoDB queries for architectural flaws.', tags: ['Secure Code Review', 'MERN Defense', 'JWT Hardening', 'Node.js Security'] },
     ],
+  },
+];
+
+export const securityBadges = [
+  {
+    platform: 'TryHackMe',
+    handle: '@MahekPanara',
+    badgeTitle: 'SOC Level 1 & Pre-Security',
+    status: 'In Progress / Verified Labs',
+    focus: 'Network Defense, Phishing Triage, Splunk, Linux Fundamentals, Wireshark',
+    metrics: 'Top 15% Global Rank',
+    url: 'https://tryhackme.com/p/MahekPanara',
+  },
+  {
+    platform: 'PortSwigger Web Security Academy',
+    handle: 'Mahek Panara',
+    badgeTitle: 'Web Security Practitioner Labs',
+    status: 'Active Labs',
+    focus: 'SQL Injection, Cross-Site Scripting (XSS), Broken Access Control (IDOR), CSRF',
+    metrics: 'Hands-on Labs Solved',
+    url: 'https://portswigger.net/web-security',
+  },
+  {
+    platform: 'HackTheBox & LetsDefend',
+    handle: '@MahekPanara24',
+    badgeTitle: 'Blue Team & Network Security Labs',
+    status: 'Active Learner',
+    focus: 'Endpoint Incident Response, Malware Traffic Analysis, SOC Alert Verification',
+    metrics: 'Defense Labs',
+    url: 'https://www.hackthebox.com/',
+  },
+];
+
+export const securityCertifications = [
+  {
+    name: 'Cybersecurity Professional Course',
+    issuer: 'Demmisto Technologies',
+    status: 'Ongoing Coursework',
+    focus: 'Network Defense, Web Vulnerability Scanning, Security Assessment & Mitigation',
+    period: '2026 – Present',
+    badgeClass: 'bg-emerald-950/80 text-emerald-300 border-emerald-700/60',
+  },
+  {
+    name: 'CompTIA Security+ (SY0-701)',
+    issuer: 'CompTIA',
+    status: 'Exam Preparation In Progress',
+    focus: 'Threats, Attacks & Vulnerabilities, Security Architecture, Incident Response',
+    period: 'Target 2026',
+    badgeClass: 'bg-blue-950/80 text-blue-300 border-blue-700/60',
+  },
+  {
+    name: 'Blue Team Level 1 (BTL1)',
+    issuer: 'Security Blue Team',
+    status: 'Target Certification',
+    focus: 'Security Operations (SOC), SIEM Log Analysis, Digital Forensics & Threat Hunting',
+    period: 'Target 2026',
+    badgeClass: 'bg-indigo-950/80 text-indigo-300 border-indigo-700/60',
+  },
+  {
+    name: 'eJPT (Junior Penetration Tester)',
+    issuer: 'INE Security',
+    status: 'Target Certification',
+    focus: 'Assessment Methodologies, Host & Network Auditing, Web App Penetration Testing',
+    period: 'Target 2026',
+    badgeClass: 'bg-slate-900 text-slate-300 border-slate-700',
   },
 ];
 

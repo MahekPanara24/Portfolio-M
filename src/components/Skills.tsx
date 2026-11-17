@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Code, Activity, Check } from 'lucide-react';
-import { skillCategories } from '../data/portfolioData';
+import { Shield, Code, Activity, Check, Radio, Award } from 'lucide-react';
+import { skillCategories, securityCertifications } from '../data/portfolioData';
 
 export const Skills: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,8 +12,10 @@ export const Skills: React.FC = () => {
         return <Shield className="w-5 h-5 text-blue-400" />;
       case 'Activity':
         return <Activity className="w-5 h-5 text-sky-400" />;
+      case 'Radio':
+        return <Radio className="w-5 h-5 text-indigo-400" />;
       case 'Code':
-        return <Code className="w-5 h-5 text-indigo-400" />;
+        return <Code className="w-5 h-5 text-blue-300" />;
       default:
         return <Shield className="w-5 h-5 text-blue-400" />;
     }
@@ -45,19 +47,19 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Full-width Responsive Grid Tab Navigation */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-5xl mx-auto mb-12">
           {skillCategories.map((category, idx) => (
             <button
               key={idx}
               onClick={() => setActiveTab(idx)}
-              className={`flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl font-medium text-sm transition-all duration-200 w-full text-center ${
+              className={`flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 w-full text-center ${
                 activeTab === idx
                   ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
                   : 'bg-[#0d131f] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
               }`}
             >
               {getCategoryIcon(category.icon)}
-              <span>{category.title}</span>
+              <span className="truncate">{category.title}</span>
             </button>
           ))}
         </div>
@@ -113,7 +115,7 @@ export const Skills: React.FC = () => {
         </motion.div>
 
         {/* Core Competencies Ribbon */}
-        <div>
+        <div className="mb-16">
           <h3 className="text-center text-lg font-bold text-white mb-6 font-mono text-slate-300">
             // Core Analytical Competencies
           </h3>
@@ -130,6 +132,51 @@ export const Skills: React.FC = () => {
                 <p className="text-xs text-slate-300 leading-relaxed">
                   {comp.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Security Certifications & Milestones in Preparation */}
+        <div className="pt-10 border-t border-slate-800/80 text-left">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider mb-2">
+              // CREDENTIALS & INDUSTRY ROADMAP
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Security Certifications & Target Milestones
+            </h3>
+            <p className="text-slate-400 text-sm mt-2">
+              Active professional coursework and industry exam targets aligned with SOC, defense, and penetration testing benchmarks.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {securityCertifications.map((cert, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded border font-semibold ${cert.badgeClass}`}>
+                      {cert.status}
+                    </span>
+                    <Award className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <h4 className="text-base font-bold text-white group-hover:text-blue-300 transition-colors">
+                    {cert.name}
+                  </h4>
+                  <div className="text-xs font-mono text-slate-400 mt-1">
+                    Issuer: {cert.issuer}
+                  </div>
+                  <p className="text-xs text-slate-300 mt-3 leading-relaxed">
+                    {cert.focus}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-blue-400">
+                  Timeline: {cert.period}
+                </div>
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Terminal, ArrowUpRight, Menu, X, FileDown } from 'lucide-react';
+import { Volume2, VolumeX, Terminal, ArrowUpRight, Menu, X, FileDown, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavbarProps {
@@ -137,6 +137,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
+            {/* Sample Audit Report Button */}
+            <a
+              href="Mahek_Panara_Security_Assessment_Report.pdf"
+              download="Mahek_Panara_Security_Assessment_Report.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-950/40 border border-blue-800/80 hover:border-blue-500 text-xs font-semibold text-blue-300 hover:text-white transition-colors"
+            >
+              <FileText className="w-3.5 h-3.5 text-blue-400" />
+              <span>Audit Report</span>
+            </a>
+
             {/* Resume Button */}
             <button
               onClick={onOpenResume}
@@ -187,7 +199,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {link.name}
               </a>
             ))}
-            <div className="pt-2 flex gap-2">
+            <div className="pt-2 flex flex-col sm:flex-row gap-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -198,6 +210,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <Terminal className="w-4 h-4 text-blue-400" />
                 <span>Analyst Shell</span>
               </button>
+
+              <a
+                href="Mahek_Panara_Security_Assessment_Report.pdf"
+                download="Mahek_Panara_Security_Assessment_Report.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 py-2 rounded-lg bg-blue-950/60 border border-blue-800 text-xs font-semibold text-blue-300 flex items-center justify-center gap-1.5"
+              >
+                <FileText className="w-4 h-4 text-blue-400" />
+                <span>Audit Report (PDF)</span>
+              </a>
             </div>
           </motion.div>
         )}

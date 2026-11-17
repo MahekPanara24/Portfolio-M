@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Server, GraduationCap, ArrowDown, ExternalLink, Volume2 } from 'lucide-react';
+import { Shield, Server, GraduationCap, ArrowDown, ExternalLink, Volume2, FileText } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon } from './Icons';
 
@@ -186,6 +186,17 @@ export const Hero: React.FC<HeroProps> = ({
               >
                 <span>GO ON, SCROLL DOWN</span>
                 <ArrowDown className="w-4 h-4 text-blue-400 group-hover:translate-y-0.5 transition-transform" />
+              </a>
+
+              <a
+                href="Mahek_Panara_Security_Assessment_Report.pdf"
+                download="Mahek_Panara_Security_Assessment_Report.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-3 rounded-full bg-blue-600/20 hover:bg-blue-600 border border-blue-500/50 text-xs sm:text-sm font-mono font-semibold text-blue-300 hover:text-white transition-all shadow-sm flex items-center gap-1.5"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>Sample Audit Report</span>
               </a>
 
               <button

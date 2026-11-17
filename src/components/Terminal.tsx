@@ -19,11 +19,11 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       command: 'welcome',
       output: (
         <div className="space-y-1.5 text-xs text-slate-300">
-          <p className="text-emerald-400 font-bold">
-            [+] SOC DEFENSE TERMINAL v2.6.4 INITIALIZED
+          <p className="text-blue-400 font-bold">
+            [+] MAHEK PANARA — ANALYST SHELL v2.4 (ACTIVE)
           </p>
           <p className="text-slate-400">
-            Welcome to Mahek Panara's Interactive Analyst Shell. Type <span className="text-cyan-400 font-semibold">'help'</span> to see available commands or click the chips below.
+            Welcome to Mahek Panara's interactive profile terminal. Type <span className="text-white font-semibold">'help'</span> or select a command below.
           </p>
         </div>
       ),
@@ -53,14 +53,12 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'help':
         response = (
           <div className="space-y-1 text-slate-300 text-xs">
-            <p className="text-cyan-400 font-bold">Available Commands:</p>
-            <p><span className="text-emerald-400 font-mono">whoami</span> - Display Mahek's background and mission</p>
-            <p><span className="text-emerald-400 font-mono">skills</span> - List cybersecurity and full-stack technical competencies</p>
-            <p><span className="text-emerald-400 font-mono">projects</span> - Display highlighted security and MERN projects</p>
-            <p><span className="text-emerald-400 font-mono">scan</span> - Execute simulated vulnerability & port assessment</p>
-            <p><span className="text-emerald-400 font-mono">relocate</span> - Check relocation preferences and availability</p>
-            <p><span className="text-emerald-400 font-mono">contact</span> - Retrieve contact info and communication links</p>
-            <p><span className="text-emerald-400 font-mono">clear</span> - Clear the terminal output</p>
+            <p className="text-blue-400 font-bold">Available Commands:</p>
+            <p><span className="text-white font-mono">whoami</span> - Display background & professional summary</p>
+            <p><span className="text-white font-mono">skills</span> - List cybersecurity & MERN competencies</p>
+            <p><span className="text-white font-mono">projects</span> - Display technical projects & features</p>
+            <p><span className="text-white font-mono">contact</span> - Retrieve verified contact info</p>
+            <p><span className="text-white font-mono">clear</span> - Clear output history</p>
           </div>
         );
         break;
@@ -68,8 +66,8 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'whoami':
         response = (
           <div className="space-y-1 text-xs text-slate-300">
-            <p className="text-cyan-300 font-semibold">{personalInfo.name} — {personalInfo.title}</p>
-            <p className="text-slate-400">{personalInfo.summary}</p>
+            <p className="text-blue-300 font-semibold">{personalInfo.name} — {personalInfo.title}</p>
+            <p className="text-slate-400 leading-relaxed">{personalInfo.summary}</p>
           </div>
         );
         break;
@@ -78,8 +76,8 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
         response = (
           <div className="space-y-2 text-xs">
             {skillCategories.map((cat, idx) => (
-              <div key={idx} className="border-l-2 border-cyan-500/50 pl-2">
-                <p className="text-cyan-400 font-bold">{cat.title}:</p>
+              <div key={idx} className="border-l-2 border-blue-500 pl-2">
+                <p className="text-blue-400 font-bold">{cat.title}:</p>
                 <p className="text-slate-300">{cat.skills.map(s => s.name).join(' • ')}</p>
               </div>
             ))}
@@ -92,24 +90,11 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
           <div className="space-y-2 text-xs">
             {projects.map((p, idx) => (
               <div key={idx} className="p-2 rounded bg-slate-900 border border-slate-800">
-                <p className="text-emerald-400 font-bold">{p.title}</p>
+                <p className="text-blue-400 font-bold">{p.title}</p>
                 <p className="text-slate-300">{p.summary}</p>
-                <p className="text-[10px] text-cyan-400 mt-1">Tags: {p.tags.join(', ')}</p>
+                <p className="text-[10px] text-slate-400 mt-1">Tags: {p.tags.join(', ')}</p>
               </div>
             ))}
-          </div>
-        );
-        break;
-
-      case 'scan':
-        response = (
-          <div className="space-y-1 text-xs font-mono">
-            <p className="text-cyan-400">[*] Initiating Simulated Threat & Port Audit...</p>
-            <p className="text-slate-400">[+] Port 80 (HTTP): OPEN [Redirecting to HTTPS: Enforced]</p>
-            <p className="text-slate-400">[+] Port 443 (HTTPS): OPEN [TLS 1.3 Active | Strict Cipher Suites]</p>
-            <p className="text-slate-400">[+] Port 22 (SSH): FILTERED [Key-Based Auth Only]</p>
-            <p className="text-slate-400">[+] Security Headers: CSP, HSTS, X-Frame-Options: VALIDATED</p>
-            <p className="text-emerald-400 font-bold">[✔] Result: 0 Critical Vulnerabilities Detected. Posture: HARDENED.</p>
           </div>
         );
         break;
@@ -117,11 +102,11 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'relocate':
         response = (
           <div className="text-xs space-y-1">
-            <p className="text-emerald-400 font-bold">📍 Relocation Status: Active & Ready</p>
+            <p className="text-blue-400 font-bold">📍 Relocation Status: Ready & Available</p>
             <p className="text-slate-300">
-              Open to Relocate to: <strong>Ahmedabad, Vadodara, Gandhinagar, Surat & across Gujarat</strong>.
+              Open to Relocate across: <strong>Ahmedabad, Vadodara, Gandhinagar, Surat & Gujarat</strong>.
             </p>
-            <p className="text-cyan-300">Availability: Immediate Joining</p>
+            <p className="text-slate-400">Notice: Immediate Joining</p>
           </div>
         );
         break;
@@ -129,10 +114,10 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'contact':
         response = (
           <div className="text-xs space-y-1 text-slate-300">
-            <p>Email: <a href={`mailto:${personalInfo.email}`} className="text-cyan-400 hover:underline">{personalInfo.email}</a></p>
-            <p>Phone: <span className="text-emerald-400">{personalInfo.phone}</span></p>
-            <p>LinkedIn: <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">{personalInfo.linkedin}</a></p>
-            <p>GitHub: <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">{personalInfo.github}</a></p>
+            <p>Email: <a href={`mailto:${personalInfo.email}`} className="text-blue-400 hover:underline">{personalInfo.email}</a></p>
+            <p>Phone: <span className="text-white">{personalInfo.phone}</span></p>
+            <p>LinkedIn: <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">{personalInfo.linkedin}</a></p>
+            <p>GitHub: <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">{personalInfo.github}</a></p>
           </div>
         );
         break;
@@ -143,8 +128,8 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
 
       default:
         response = (
-          <p className="text-xs text-red-400">
-            Command not recognized: '{cmd}'. Type <span className="text-cyan-300 underline cursor-pointer" onClick={() => handleCommand('help')}>'help'</span> for list of commands.
+          <p className="text-xs text-rose-400">
+            Command not recognized: '{cmd}'. Type <span className="text-blue-300 underline cursor-pointer" onClick={() => handleCommand('help')}>'help'</span> for list of commands.
           </p>
         );
         break;
@@ -160,24 +145,24 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
     setInput('');
   };
 
-  const quickCommands = ['help', 'whoami', 'skills', 'projects', 'scan', 'contact', 'clear'];
+  const quickCommands = ['help', 'whoami', 'skills', 'projects', 'contact', 'clear'];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
       <div
-        className={`bg-slate-950 border border-cyan-500/40 rounded-xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ${
+        className={`bg-[#0a0e17] border border-blue-500/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ${
           isMaximized ? 'w-full h-full' : 'w-full max-w-3xl h-[560px]'
         }`}
       >
-        {/* Terminal Title Bar */}
-        <div className="px-4 py-3 bg-slate-900 border-b border-cyan-900/50 flex items-center justify-between select-none">
+        {/* Title Bar */}
+        <div className="px-4 py-3 bg-[#070a10] border-b border-slate-800 flex items-center justify-between select-none">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/80 cursor-pointer" onClick={onClose} />
+            <div className="w-3 h-3 rounded-full bg-rose-500/80 cursor-pointer" onClick={onClose} />
             <div className="w-3 h-3 rounded-full bg-amber-500/80 cursor-pointer" onClick={() => setIsMaximized(!isMaximized)} />
-            <div className="w-3 h-3 rounded-full bg-emerald-500/80 cursor-pointer" onClick={() => setIsMaximized(!isMaximized)} />
-            <span className="ml-3 text-xs font-mono text-cyan-300 flex items-center gap-1.5">
-              <TerminalIcon className="w-3.5 h-3.5 text-cyan-400" />
-              mahek@soc-station: ~ (zsh)
+            <div className="w-3 h-3 rounded-full bg-blue-500/80 cursor-pointer" onClick={() => setIsMaximized(!isMaximized)} />
+            <span className="ml-3 text-xs font-mono text-slate-300 flex items-center gap-1.5 font-medium">
+              <TerminalIcon className="w-3.5 h-3.5 text-blue-400" />
+              mahek@analyst-station: ~ (zsh)
             </span>
           </div>
 
@@ -191,7 +176,7 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
             </button>
             <button
               onClick={onClose}
-              className="text-slate-400 hover:text-red-400 p-1 rounded"
+              className="text-slate-400 hover:text-rose-400 p-1 rounded"
               title="Close terminal"
             >
               <X className="w-4 h-4" />
@@ -199,29 +184,29 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* Quick Command Action Chips */}
-        <div className="px-4 py-2 bg-slate-950 border-b border-slate-800/80 flex items-center gap-2 overflow-x-auto text-[11px] font-mono">
+        {/* Quick Command Chips */}
+        <div className="px-4 py-2 bg-[#090d16] border-b border-slate-800 flex items-center gap-2 overflow-x-auto text-[11px] font-mono">
           <span className="text-slate-500 flex items-center gap-1 shrink-0">
-            <Sparkles className="w-3 h-3 text-cyan-400" />
-            Quick:
+            <Sparkles className="w-3 h-3 text-blue-400" />
+            Commands:
           </span>
           {quickCommands.map((cmd) => (
             <button
               key={cmd}
               onClick={() => handleCommand(cmd)}
-              className="px-2 py-0.5 rounded bg-slate-900 hover:bg-cyan-950 text-cyan-300 border border-slate-800 hover:border-cyan-500/50 shrink-0 transition-colors"
+              className="px-2.5 py-1 rounded bg-slate-900 hover:bg-blue-950 text-slate-300 hover:text-blue-300 border border-slate-800 hover:border-blue-500/50 shrink-0 transition-colors"
             >
               {cmd}
             </button>
           ))}
         </div>
 
-        {/* Console Output Area */}
-        <div className="flex-1 p-4 overflow-y-auto space-y-3 font-mono scanline">
+        {/* Output Log */}
+        <div className="flex-1 p-5 overflow-y-auto space-y-3 font-mono">
           {history.map((item, idx) => (
             <div key={idx} className="space-y-1">
               <div className="flex items-center gap-2 text-xs">
-                <span className="text-cyan-400">mahek@soc:~$</span>
+                <span className="text-blue-400 font-semibold">mahek@profile:~$</span>
                 <span className="text-white font-semibold">{item.command}</span>
               </div>
               <div className="pl-4">{item.output}</div>
@@ -230,20 +215,20 @@ export const TerminalModal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
           <div ref={bottomRef} />
         </div>
 
-        {/* Command Input Bar */}
-        <form onSubmit={onSubmit} className="p-3 bg-slate-900/90 border-t border-cyan-900/50 flex items-center gap-2">
-          <span className="text-cyan-400 font-mono text-sm pl-2">mahek@soc:~$</span>
+        {/* Input Bar */}
+        <form onSubmit={onSubmit} className="p-3 bg-[#070a10] border-t border-slate-800 flex items-center gap-2">
+          <span className="text-blue-400 font-mono text-xs pl-2">mahek@profile:~$</span>
           <input
             ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type 'help' or any command..."
-            className="flex-1 bg-transparent text-sm font-mono text-white focus:outline-none placeholder:text-slate-500"
+            className="flex-1 bg-transparent text-xs font-mono text-white focus:outline-none placeholder:text-slate-500"
           />
           <button
             type="submit"
-            className="px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-mono border border-cyan-500/30 flex items-center gap-1.5"
+            className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono flex items-center gap-1.5 transition-colors"
           >
             <Send className="w-3 h-3" />
             Run

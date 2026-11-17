@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Code2, Cpu, Check, Zap } from 'lucide-react';
+import { Shield, Code, Database, Check } from 'lucide-react';
 import { skillCategories } from '../data/portfolioData';
-import { SecurityScanner } from './SecurityScanner';
 
 export const Skills: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
-      case 'ShieldCheck':
-        return <ShieldCheck className="w-5 h-5 text-cyan-400" />;
-      case 'Code2':
-        return <Code2 className="w-5 h-5 text-emerald-400" />;
-      case 'Cpu':
-        return <Cpu className="w-5 h-5 text-purple-400" />;
+      case 'Shield':
+        return <Shield className="w-5 h-5 text-blue-400" />;
+      case 'Code':
+        return <Code className="w-5 h-5 text-indigo-400" />;
+      case 'Database':
+        return <Database className="w-5 h-5 text-sky-400" />;
       default:
-        return <Zap className="w-5 h-5 text-cyan-400" />;
+        return <Shield className="w-5 h-5 text-blue-400" />;
     }
   };
 
   const coreCompetencies = [
-    { title: 'Analytical Thinking', desc: 'Deconstructing complex network packet traces and application stack errors into root causes.' },
-    { title: 'Logical Problem Solving', desc: 'Systematic debugging across database layers, REST contracts, and frontend states.' },
-    { title: 'Threat Analysis Awareness', desc: 'Continuous vigilance regarding evolving attack vectors and defense-in-depth methodologies.' },
-    { title: 'Agile Adaptability', desc: 'Quickly mastering new toolchains, frameworks, and security benchmarks in collaborative sprints.' },
-    { title: 'Cross-Functional Communication', desc: 'Articulating technical security findings clearly to non-technical stakeholders.' },
+    { title: 'Analytical Thinking', desc: 'Systematic analysis of network traffic patterns, security protocols, and system logs.' },
+    { title: 'Logical Problem Solving', desc: 'Methodical debugging across database schemas, REST APIs, and application logic.' },
+    { title: 'Threat Analysis Awareness', desc: 'Proactive understanding of modern attack vectors, input vulnerabilities, and defense protocols.' },
+    { title: 'Agile Adaptability', desc: 'Collaborative development with Git version control in fast-paced sprint cycles.' },
+    { title: 'Cross-Functional Communication', desc: 'Articulating technical vulnerability assessments and architectural needs clearly.' },
   ];
 
   return (
@@ -34,14 +33,14 @@ export const Skills: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-xs font-mono text-cyan-300 mb-3">
-            <span>TECHNICAL PROFICIENCIES</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-mono text-blue-400 mb-3">
+            <span>TECHNICAL SKILLS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Security Expertise & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Development Arsenal</span>
+            Cybersecurity & <span className="text-blue-400">Full-Stack Competencies</span>
           </h2>
           <p className="mt-4 text-slate-400 text-base">
-            Equipped with practical coursework and production internship experience across both software defense and web application engineering.
+            Structured skillsets gained through B.Sc. IT coursework, Demmisto Technologies specialized training, and True Twist internship.
           </p>
         </div>
 
@@ -51,10 +50,10 @@ export const Skills: React.FC = () => {
             <button
               key={idx}
               onClick={() => setActiveTab(idx)}
-              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
+              className={`flex items-center gap-2.5 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-200 ${
                 activeTab === idx
-                  ? 'bg-slate-900 border-2 border-cyan-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.3)]'
-                  : 'bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+                  ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
+                  : 'bg-[#0d131f] border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
               }`}
             >
               {getCategoryIcon(category.icon)}
@@ -66,7 +65,7 @@ export const Skills: React.FC = () => {
         {/* Skills Cards Grid */}
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 text-left"
@@ -74,28 +73,28 @@ export const Skills: React.FC = () => {
           {skillCategories[activeTab].skills.map((skill, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-cyan-500/40 transition-all hover:bg-slate-900/90 shadow-md group"
+              className="p-6 rounded-2xl bg-[#0d131f] border border-slate-800 hover:border-blue-500/40 transition-all shadow-md group"
             >
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
+                <h4 className="text-base font-bold text-white group-hover:text-blue-300 transition-colors">
                   {skill.name}
                 </h4>
-                <span className="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/40">
+                <span className="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-900/60">
                   {skill.level}%
                 </span>
               </div>
 
-              {/* Animated Progress Bar */}
-              <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden mb-3">
+              {/* Solid Blue Animated Progress Bar */}
+              <div className="w-full h-2 rounded-full bg-slate-900 overflow-hidden mb-3">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${skill.level}%` }}
-                  transition={{ duration: 0.8, delay: idx * 0.1 }}
-                  className="h-full bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"
+                  transition={{ duration: 0.7, delay: idx * 0.08 }}
+                  className="h-full bg-blue-500 rounded-full"
                 />
               </div>
 
-              <p className="text-xs text-slate-400 mb-3 leading-relaxed">
+              <p className="text-xs text-slate-300 mb-3 leading-relaxed">
                 {skill.description}
               </p>
 
@@ -103,9 +102,9 @@ export const Skills: React.FC = () => {
                 {skill.tags.map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/50"
+                    className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
                   >
-                    #{tag}
+                    {tag}
                   </span>
                 ))}
               </div>
@@ -114,18 +113,18 @@ export const Skills: React.FC = () => {
         </motion.div>
 
         {/* Core Competencies Ribbon */}
-        <div className="mb-20">
+        <div>
           <h3 className="text-center text-lg font-bold text-white mb-6 font-mono text-slate-300">
-            // Core Professional Competencies
+            // Core Analytical Competencies
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-left">
             {coreCompetencies.map((comp, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 transition-all"
+                className="p-4 rounded-xl bg-[#0d131f] border border-slate-800/80 hover:border-slate-700 transition-all"
               >
-                <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold font-mono mb-1.5">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="flex items-center gap-2 text-blue-400 text-xs font-bold font-mono mb-1.5">
+                  <Check className="w-3.5 h-3.5 text-blue-400" />
                   {comp.title}
                 </div>
                 <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -134,11 +133,6 @@ export const Skills: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Embedded Interactive Security Scanner Section */}
-        <div className="mt-8">
-          <SecurityScanner />
         </div>
 
       </div>

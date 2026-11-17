@@ -15,13 +15,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="bg-slate-900 border border-cyan-500/30 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+      <div className="bg-[#0d131f] border border-blue-500/40 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
         
         {/* Modal Header */}
-        <div className="px-6 py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+        <div className="px-6 py-4 bg-[#0a0e17] border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-            <h3 className="text-sm font-mono text-cyan-300 font-semibold">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+            <h3 className="text-sm font-mono text-slate-200 font-semibold">
               Mahek_Panara_Cybersecurity_Resume.pdf
             </h3>
           </div>
@@ -29,9 +29,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-colors"
             >
-              <Printer className="w-3.5 h-3.5 text-cyan-400" />
+              <Printer className="w-3.5 h-3.5" />
               <span>Print / Save as PDF</span>
             </button>
             <button
@@ -51,7 +51,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 uppercase">
               MAHEK PANARA
             </h1>
-            <p className="text-sm font-bold text-cyan-800 mt-1">
+            <p className="text-sm font-bold text-blue-900 mt-1">
               B.Sc. IT Graduate | Cybersecurity Analyst Aspirant & Full-Stack Web Developer (MERN)
             </p>
             <div className="text-xs text-slate-600 mt-2 flex flex-wrap gap-x-3 gap-y-1">
@@ -59,12 +59,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               <span>•</span>
               <span>+91 6352760654</span>
               <span>•</span>
-              <a href="mailto:mahekpanara24@gmail.com" className="text-cyan-700 hover:underline">mahekpanara24@gmail.com</a>
+              <a href="mailto:mahekpanara24@gmail.com" className="text-blue-700 hover:underline">mahekpanara24@gmail.com</a>
               <span>•</span>
-              <a href="https://linkedin.com/in/mahek-panara-159829327" target="_blank" rel="noreferrer" className="text-cyan-700 hover:underline">linkedin.com/in/mahek-panara-159829327</a>
-            </div>
-            <div className="text-xs font-semibold text-emerald-800 mt-1.5">
-              Open to Relocation: Ahmedabad, Vadodara, Gandhinagar, Surat & across Gujarat
+              <a href="https://linkedin.com/in/mahek-panara-159829327" target="_blank" rel="noreferrer" className="text-blue-700 hover:underline">linkedin.com/in/mahek-panara-159829327</a>
             </div>
           </div>
 
@@ -115,7 +112,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span className="font-bold text-xs text-slate-900">Cybersecurity Professional Course (Ongoing)</span>
                 <span className="text-xs font-semibold text-slate-600">August 2026 – Present</span>
               </div>
-              <div className="text-xs font-medium text-cyan-800 mb-1">Demmisto Technologies</div>
+              <div className="text-xs font-medium text-blue-900 mb-1">Demmisto Technologies</div>
               <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-slate-700">
                 <li>Developing hands-on expertise in network defense, web application vulnerability scanning, and comprehensive security assessments across modern environments.</li>
                 <li>Applying core security protocols, threat mitigation strategies, and data protection principles to identify, document, and remediate system vulnerabilities.</li>
@@ -129,7 +126,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span className="font-bold text-xs text-slate-900">MERN Stack Developer Intern</span>
                 <span className="text-xs font-semibold text-slate-600">Completed</span>
               </div>
-              <div className="text-xs font-medium text-cyan-800 mb-1">True Twist — Ahmedabad, Gujarat</div>
+              <div className="text-xs font-medium text-blue-900 mb-1">True Twist — Ahmedabad, Gujarat</div>
               <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-slate-700">
                 <li>Developed full-stack web applications utilizing MongoDB, Express.js, React.js, and Node.js (MERN Stack) paired with clean, responsive HTML5/CSS3 interfaces.</li>
                 <li>Designed and integrated RESTful APIs, managed backend database queries and schemas, and implemented structured client-server input validation.</li>
@@ -159,7 +156,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               <span className="font-bold text-xs text-slate-900">Bachelor of Science in Information Technology (B.Sc. IT)</span>
               <span className="text-xs font-semibold text-slate-600">2023 – 2026</span>
             </div>
-            <div className="text-xs text-cyan-800">LJ University — Ahmedabad, Gujarat</div>
+            <div className="text-xs text-blue-900">LJ University — Ahmedabad, Gujarat</div>
             <p className="text-[11px] text-slate-600 mt-1">
               Relevant Coursework: Computer Networking Architecture, Database Management Systems (DBMS), Software Engineering, Data Structures, and Programming Paradigms.
             </p>

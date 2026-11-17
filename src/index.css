@@ -2,64 +2,64 @@
 
 @layer base {
   :root {
-    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-    --font-mono: 'Fira Code', monospace;
+    --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #030712;
+    background-color: #07090e;
     color: #f1f5f9;
+    letter-spacing: -0.011em;
   }
 
-  /* Custom Modern Cyber Scrollbar */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  /* Custom minimalist scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #030712;
+    background: #07090e;
   }
   ::-webkit-scrollbar-thumb {
     background: #1e293b;
-    border-radius: 4px;
-    border: 1px solid #06b6d433;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #06b6d4;
+    background: #3b82f6;
   }
 }
 
-/* Cyber glow utilities */
-.text-glow-cyan {
-  text-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
-}
-
-.text-glow-emerald {
-  text-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
-}
-
-.box-glow-cyan {
-  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
-}
-
-.box-glow-emerald {
-  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
-}
-
-.cyber-grid {
+/* Crisp solid pattern (no gradient) */
+.solid-grid {
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 36px 36px;
+  background-size: 32px 32px;
 }
 
-.scanline {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0) 50%,
-    rgba(6, 182, 212, 0.04) 50%,
-    rgba(6, 182, 212, 0.04)
-  );
-  background-size: 100% 4px;
+/* 2D Floating Animation */
+@keyframes float2D {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: float2D 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float2D 5s ease-in-out 1.5s infinite;
 }

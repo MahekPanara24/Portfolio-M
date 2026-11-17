@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Terminal, ArrowRight, FileText, CheckCircle2, MapPin, Mail } from 'lucide-react';
-import { CyberCanvas } from './3d/CyberCanvas';
+import { Shield, Lock, Terminal, ArrowRight, FileText, MapPin, Mail, Server, GraduationCap, Briefcase, Award, Code } from 'lucide-react';
+import { HeroVisual } from './HeroVisual';
 import { stats } from '../data/portfolioData';
 
 interface HeroProps {
@@ -12,9 +12,9 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
   const roles = [
     'Cybersecurity Analyst Aspirant',
-    'SOC Analyst in Training',
+    'Full-Stack Web Developer (MERN)',
+    'Network Defense & Threat Analysis',
     'Application Security Specialist',
-    'Full-Stack MERN Developer',
   ];
 
   const [roleIndex, setRoleIndex] = useState(0);
@@ -23,11 +23,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
 
   useEffect(() => {
     const current = roles[roleIndex];
-    const typingSpeed = isDeleting ? 40 : 80;
+    const typingSpeed = isDeleting ? 25 : 60;
 
     const timer = setTimeout(() => {
       if (!isDeleting && displayText === current) {
-        setTimeout(() => setIsDeleting(true), 1600);
+        setTimeout(() => setIsDeleting(true), 1800);
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % roles.length);
@@ -43,151 +43,144 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, roleIndex]);
 
-  return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden cyber-grid">
-      {/* Background glow orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+  const statIcons = [GraduationCap, Award, Briefcase, Code];
 
+  return (
+    <section className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden solid-grid bg-[#07090e]">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Text & CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6 text-left"
           >
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>SOC & Threat Defense • MERN Architecture</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0c1018] border border-slate-800 text-xs font-medium text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+              <span>Cybersecurity Training (Demmisto) • MERN Intern (True Twist)</span>
             </div>
 
-            {/* Name & Headline */}
+            {/* Headline */}
             <div>
-              <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">Mahek Panara</span>
+              <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                Hi, I'm <span className="text-blue-500">Mahek Panara</span>
               </h1>
               
-              <div className="h-12 flex items-center mt-2">
-                <span className="text-xl sm:text-2xl font-mono text-slate-300">
-                  {'> '}
-                  <span className="text-cyan-400 font-semibold">{displayText}</span>
-                  <span className="animate-pulse text-emerald-400">_</span>
+              <div className="h-10 flex items-center mt-3">
+                <span className="text-lg sm:text-xl font-medium text-slate-300 flex items-center gap-2">
+                  <span className="text-blue-500 font-bold">&gt;</span>
+                  <span className="text-white font-semibold">{displayText}</span>
+                  <span className="inline-block w-2 h-5 bg-blue-500 animate-pulse" />
                 </span>
               </div>
             </div>
 
             {/* Professional Summary */}
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-              Detail-oriented <strong className="text-white">B.Sc. IT graduate</strong> bridging full-stack web development (MERN) with specialized cybersecurity training. Passionate about securing architectures, vulnerability assessments, and proactive threat remediation.
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+              Detail-oriented <strong className="text-white font-semibold">B.Sc. IT graduate</strong> combining practical full-stack web development experience (MERN Stack) with specialized training in Cybersecurity. Experienced in building, debugging, and securing modern web applications using MongoDB, Express.js, React.js, and Node.js.
             </p>
 
-            {/* Highlights pills */}
+            {/* Skills Pills */}
             <div className="flex flex-wrap gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300 font-mono">
-                <Lock className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0c1018] border border-slate-800 text-xs text-slate-300 font-medium">
+                <Shield className="w-3.5 h-3.5 text-blue-400" />
                 Network Defense & Threat Analysis
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300 font-mono">
-                <Shield className="w-3.5 h-3.5 text-emerald-400" />
-                OWASP Web Scanning
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0c1018] border border-slate-800 text-xs text-slate-300 font-medium">
+                <Lock className="w-3.5 h-3.5 text-blue-400" />
+                Vulnerability Assessment
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300 font-mono">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
-                MERN Production Ready
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0c1018] border border-slate-800 text-xs text-slate-300 font-medium">
+                <Server className="w-3.5 h-3.5 text-blue-400" />
+                Full-Stack MERN Engineering
               </span>
             </div>
 
-            {/* Location & Contact info chip */}
-            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 pt-1">
-              <span className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                Ahmedabad, Gujarat (Ready to Relocate)
+            {/* Location & Email Direct */}
+            <div className="flex flex-wrap items-center gap-5 text-xs text-slate-400 pt-1 font-medium">
+              <span className="flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-blue-400" />
+                Ahmedabad, Gujarat, India
               </span>
-              <span className="flex items-center gap-1">
-                <Mail className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="flex items-center gap-1.5">
+                <Mail className="w-4 h-4 text-blue-400" />
                 mahekpanara24@gmail.com
               </span>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-3">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4 pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-[0_0_25px_rgba(6,182,212,0.35)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] group"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-md group"
               >
-                <span>View Security & MERN Work</span>
+                <span>Explore Technical Projects</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <button
-                onClick={onOpenTerminal}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/40 text-cyan-300 font-mono text-sm transition-all hover:border-cyan-400 shadow-sm"
+                onClick={onOpenResume}
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0c1018] hover:bg-slate-800 border border-slate-700 text-white text-sm font-semibold transition-all hover:border-slate-500"
               >
-                <Terminal className="w-4 h-4 text-cyan-400" />
-                <span>Simulate SOC Terminal</span>
+                <FileText className="w-4 h-4 text-blue-400" />
+                <span>View Full Resume</span>
               </button>
 
               <button
-                onClick={onOpenResume}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-sm font-semibold transition-all hover:border-slate-500"
+                onClick={onOpenTerminal}
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-[#0c1018] hover:bg-slate-800 border border-slate-800 text-slate-300 text-xs font-medium transition-all hover:border-slate-700"
               >
-                <FileText className="w-4 h-4 text-emerald-400" />
-                <span>Download Resume</span>
+                <Terminal className="w-4 h-4 text-slate-400" />
+                <span>Analyst Terminal</span>
               </button>
             </div>
           </motion.div>
 
-          {/* Right Column: Interactive 3D Cyber Orb Canvas */}
+          {/* Right Column: Hero Architecture Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="lg:col-span-5 h-[420px] sm:h-[480px] w-full relative"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 h-[420px] sm:h-[460px] w-full relative"
           >
-            <div className="w-full h-full rounded-2xl border border-cyan-500/20 bg-slate-950/60 backdrop-blur-md overflow-hidden relative shadow-[0_0_50px_-10px_rgba(6,182,212,0.2)]">
-              {/* Header bar of 3D frame */}
-              <div className="absolute top-0 left-0 right-0 z-20 px-4 py-2.5 bg-slate-950/80 border-b border-cyan-900/40 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  <span className="text-xs font-mono text-cyan-300 ml-2">cyber_defense_core.glb</span>
-                </div>
-                <div className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
-                  REAL-TIME 3D
-                </div>
-              </div>
-
-              {/* 3D Canvas Rendering */}
-              <CyberCanvas />
-            </div>
+            <HeroVisual />
           </motion.div>
         </div>
 
-        {/* Quick Stats Grid */}
+        {/* 4 Stat Cards with Proper Spacing, Icons, & 2D Animations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16"
         >
-          {stats.map((item, index) => (
-            <div
-              key={index}
-              className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 transition-all text-center group hover:bg-slate-900/90"
-            >
-              <div className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 font-mono">
-                {item.value}
-              </div>
-              <div className="text-xs text-slate-400 mt-1 font-medium group-hover:text-slate-300">
-                {item.label}
-              </div>
-            </div>
-          ))}
+          {stats.map((item, index) => {
+            const Icon = statIcons[index];
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ y: -4, scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+                className="p-5 sm:p-6 rounded-2xl bg-[#0c1018] border border-slate-800 hover:border-blue-500/50 transition-all text-left group shadow-md"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <span className="text-xs text-slate-400 font-medium">
+                    {item.label}
+                  </span>
+                </div>
+                <div className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+                  {item.value}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

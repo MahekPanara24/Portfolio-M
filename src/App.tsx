@@ -15,14 +15,14 @@ export function App() {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#080b11] text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-300">
       {/* Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeOpen(true)}
         onOpenTerminal={() => setIsTerminalOpen(true)}
       />
 
-      {/* Main Content */}
+      {/* Main Content Sections */}
       <main className="flex-1">
         <Hero
           onOpenResume={() => setIsResumeOpen(true)}
@@ -38,7 +38,7 @@ export function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Interactive Modals */}
+      {/* Modals */}
       <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
